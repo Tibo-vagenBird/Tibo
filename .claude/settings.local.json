@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo init:*)",
+      "Bash(cmd.exe /c \"cargo init D:\\\\claude_todo 2>&1\")"
+    ]
+  }
+}

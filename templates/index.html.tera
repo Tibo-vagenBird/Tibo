@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - {{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">{{ name }}</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">{{ name }}</span></h1>
+            <p class="hero-subtitle">{{ title }}</p>
+            <p class="hero-bio">{{ bio }}</p>
+            <div class="hero-links">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="{{ github }}" class="btn btn-outline" target="_blank">GitHub</a>
+                <a href="{{ linkedin }}" class="btn btn-outline" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>{{ bio }}</p>
+                <p>I focus on embedded software development — writing drivers, firmware, and real-time control systems.
+                   My Python experience is in scripting and automation tooling, complementing my core work in low-level systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                {% for project in projects %}
+                <a href="{{ project.link }}" class="card" target="_blank">
+                    <h3 class="card-title">{{ project.name }}</h3>
+                    <p class="card-description">{{ project.description }}</p>
+                    <div class="card-tech">{{ project.tech }}</div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-list">
+                {% for skill in skills %}
+                <div class="skill-row">
+                    <span class="skill-category">{{ skill.category }}</span>
+                    <span class="skill-items">{{ skill.items }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                {% for exp in experiences %}
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-role">{{ exp.role }}</h3>
+                        <div class="timeline-meta">
+                            <span class="timeline-company">{{ exp.company }}</span>
+                            <span class="timeline-period">{{ exp.period }}</span>
+                        </div>
+                        <p class="timeline-description">{{ exp.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always open to new opportunities and interesting projects.
+                   Feel free to reach out!</p>
+                <a href="mailto:{{ email }}" class="btn">{{ email }}</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 {{ name }}. Built with Rust &amp; Rocket.</p>
+        </div>
+    </footer>
+</body>
+</html>

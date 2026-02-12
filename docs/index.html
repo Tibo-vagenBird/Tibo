@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo Ti - Embedded Software Developer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Bo Ti</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Bo Ti</span></h1>
+            <p class="hero-subtitle">Embedded Software Developer</p>
+            <p class="hero-bio">2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.</p>
+            <div class="hero-links">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="https://github.com/Tibo-vagenBird" class="btn btn-outline" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/tibo-bcece71/" class="btn btn-outline" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.</p>
+                <p>I focus on embedded software development — writing drivers, firmware, and real-time control systems.
+                   My Python experience is in scripting and automation tooling, complementing my core work in low-level systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <a href="https://github.com/Elec-291-Group/Reflow-Oven-Controller" class="card" target="_blank">
+                    <h3 class="card-title">8052 Oven Reflow Controller</h3>
+                    <p class="card-description">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture using bit-addressable memory as a signal bus, wrote all core FSMs (button debouncing, UI updates, timing, and the 7-stage reflow control workflow), and configured timers and interrupts. Mid-project, I reviewed and rewrote 2,500+ lines of code to enforce the pub-sub pattern as new features were merged. The system drives an SSR via soft-PWM with proportional control, supports dual interaction through a 4x4 keypad/LCD hardware interface and a UART-based PC GUI (57600 baud), and includes thermocouple fault detection with emergency shutdown.</p>
+                    <div class="card-tech">8052 Assembly, Cooperative Multitasking, Pub-Sub Architecture, FSM Design, SSR PWM Control, UART, DE10-Lite FPGA</div>
+                </a>
+                <a href="https://github.com/UBC-Rocket/ulysses-ground-control" class="card" target="_blank">
+                    <h3 class="card-title">Ulysses Ground Control Station</h3>
+                    <p class="card-description">Qt Quick ground control software for UBC Rocket's Ulysses vehicle. Built the C++ backend including the serial interface with the radio modem, alarm receive/processing/display pipeline, and parameter setting logic. Designed and implemented the settings page UI for customizing data display layouts at runtime. The station features a real-time telemetry dashboard with Kalman-filtered orientation, barometric and environmental data, engine control monitoring, a configurable PID controller interface for multiple flight modes, and a radio modem console with single/dual-port modes.</p>
+                    <div class="card-tech">C++, QML, Qt Quick, Serial Communication, Radio Modem</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-list">
+                <div class="skill-row">
+                    <span class="skill-category">Languages</span>
+                    <span class="skill-items">8052 Assembly, C/C++, QML, Python</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Embedded &amp; Hardware</span>
+                    <span class="skill-items">FSM Design, PWM Control, UART/Serial Communication, Pub-Sub Architecture, Cooperative Multitasking, Timer/Interrupt Configuration</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Frameworks &amp; Libraries</span>
+                    <span class="skill-items">Qt Quick</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Scripting &amp; Automation</span>
+                    <span class="skill-items">Selenium, BeautifulSoup, OpenCV, NumPy, Pandas, Matplotlib</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Software &amp; Tools</span>
+                    <span class="skill-items">Quartus, Qt Creator, VS Code, Git, Office Suite</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">CAD / Design</span>
+                    <span class="skill-items">SolidWorks (Advanced Surfacing, Sheet Metal, Assembly)</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-category">Lab Equipment</span>
+                    <span class="skill-items">Logic Analyzer, Multimeter, Oscilloscope, Signal Generator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-role">Ground Control Software Engineer — Embedded Interface</h3>
+                        <div class="timeline-meta">
+                            <span class="timeline-company">UBC Rocket</span>
+                            <span class="timeline-period">2025 - Present</span>
+                        </div>
+                        <p class="timeline-description">Building the ground control station for Ulysses using Qt Quick (C++/QML). Responsible for the C++ backend, radio modem interface, alarm processing, parameter settings, and settings page UI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <p>I'm always open to new opportunities and interesting projects.
+                   Feel free to reach out!</p>
+                <a href="mailto:bti@student.ubc.ca" class="btn">bti@student.ubc.ca</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Bo Ti. Built with Rust &amp; Rocket.</p>
+        </div>
+    </footer>
+</body>
+</html>

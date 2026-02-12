@@ -1,0 +1,11 @@
+[package]
+name = "claude_todo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = { version = "0.5", features = ["json"] }
+rocket_dyn_templates = { version = "0.2", features = ["tera"] }
+shuttle-rocket = "0.57.0"
+shuttle-runtime = "0.57.0"
+tokio = "1"
