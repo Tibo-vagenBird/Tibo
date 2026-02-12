@@ -380,7 +380,14 @@ body {
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* Fix iOS background-attachment: fixed bug */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+/* Responsive — Tablet */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -390,9 +397,31 @@ body {
         font-size: 1.2rem;
     }
 
+    .hero-content {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+
     .nav-links {
         gap: 1rem;
         font-size: 0.8rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .projects-grid {
@@ -414,8 +443,93 @@ body {
     }
 }
 
+/* Responsive — Mobile */
 @media (max-width: 480px) {
+    body {
+        background-attachment: scroll;
+    }
+
     .nav-links {
         display: none;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 4.5rem 0.75rem 2rem;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-bio {
+        font-size: 0.95rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1.25rem;
+        border-radius: 12px;
+    }
+
+    .hero-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card {
+        padding: 1.25rem 1rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+
+    .timeline-role {
+        font-size: 1rem;
+    }
+
+    .contact-content p {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        padding: 1.5rem 0;
     }
 }
