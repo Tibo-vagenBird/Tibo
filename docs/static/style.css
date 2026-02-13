@@ -399,6 +399,12 @@ body {
     font-size: 0.85rem;
 }
 
+.footer-sub {
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
 /* Fix iOS background-attachment: fixed bug */
 @supports (-webkit-touch-callout: none) {
     body {
