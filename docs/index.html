@@ -17,6 +17,7 @@
                 <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
+            <button class="lang-switch" id="langSwitch" onclick="toggleLang()">CN</button>
         </div>
     </nav>
 
@@ -135,6 +136,8 @@
     </footer>
 
     <script>
+    var currentLang = "en";
+    var en = {};
     var zh = {
         nav_about: "\u5173\u4e8e\u6211",
         nav_projects: "\u9879\u76ee",
@@ -172,9 +175,27 @@
         footer_text: "&copy; 2026 \u535a\u8fea\u3002\u4f7f\u7528 Rust &amp; Rocket \u6784\u5efa\u3002"
     };
 
-    function applyLang(translations) {
-        document.documentElement.lang = "zh-CN";
-        document.title = "\u535a\u8fea - \u5d4c\u5165\u5f0f\u8f6f\u4ef6\u5f00\u53d1\u8005";
+    // Save English defaults on load
+    (function() {
+        var els = document.querySelectorAll("[data-i18n]");
+        for (var i = 0; i < els.length; i++) {
+            en[els[i].getAttribute("data-i18n")] = els[i].innerHTML;
+        }
+    })();
+
+    function setLang(lang) {
+        currentLang = lang;
+        var translations = lang === "zh" ? zh : en;
+        var btn = document.getElementById("langSwitch");
+        if (lang === "zh") {
+            document.documentElement.lang = "zh-CN";
+            document.title = "\u535a\u8fea - \u5d4c\u5165\u5f0f\u8f6f\u4ef6\u5f00\u53d1\u8005";
+            btn.textContent = "EN";
+        } else {
+            document.documentElement.lang = "en";
+            document.title = "Bo Ti - Embedded Software Developer";
+            btn.textContent = "CN";
+        }
         var els = document.querySelectorAll("[data-i18n]");
         for (var i = 0; i < els.length; i++) {
             var key = els[i].getAttribute("data-i18n");
@@ -184,12 +205,17 @@
         }
     }
 
+    function toggleLang() {
+        setLang(currentLang === "en" ? "zh" : "en");
+    }
+
+    // Auto-detect country via IP
     (function() {
         fetch("https://ipapi.co/json/")
             .then(function(res) { return res.json(); })
             .then(function(data) {
                 if (data.country_code === "CN") {
-                    applyLang(zh);
+                    setLang("zh");
                 }
             })
             .catch(function() {});
