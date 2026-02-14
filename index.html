@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo Ti - Embedded Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dot-grid background canvas -->
+    <canvas id="gridCanvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Bo Ti<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langSwitch" onclick="toggleLang()" aria-label="Toggle language">
+                    <span class="lang-label" id="langLabel">CN</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-content-wrapper">
+            <div class="glass-card">
+                <p class="hero-greeting" data-i18n="hero_greeting">Hello, my name is</p>
+                <h1 class="hero-name">Bo Ti<span class="cursor">_</span></h1>
+                <h2 class="hero-title" data-i18n="hero_subtitle">Embedded Software Developer</h2>
+                <p class="hero-bio" data-i18n="hero_bio">2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_work">View My Work</a>
+                    <a href="https://github.com/Tibo-vagenBird" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/tibo-bcece71/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="glass-card glass-card-signal">
+                <div class="signal-display">
+                    <canvas id="signalCanvas"></canvas>
+                </div>
+                <div class="signal-label">SYS_READY <span class="blink">●</span></div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span data-i18n="scroll_hint">scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">01</span>
+                <h2 class="section-title" data-i18n="about_title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-i18n="about_p1">2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.</p>
+                    <p data-i18n="about_p2">I focus on embedded software development — writing drivers, firmware, and real-time control systems.
+                       My Python experience is in scripting and automation tooling, complementing my core work in low-level systems.</p>
+                </div>
+                <div class="about-aside">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-title">profile.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <code>
+<span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
+<span class="t-output">Bo Ti (倜博)</span>
+<span class="t-prompt">$</span> <span class="t-cmd">cat education.txt</span>
+<span class="t-output">UBC Electrical Engineering</span>
+<span class="t-output">Year 2</span>
+<span class="t-prompt">$</span> <span class="t-cmd">cat focus.txt</span>
+<span class="t-output">Embedded Software</span>
+<span class="t-output">Firmware &amp; Drivers</span>
+<span class="t-output">Real-time Systems</span>
+<span class="t-prompt">$</span> <span class="cursor">_</span>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">02</span>
+                <h2 class="section-title" data-i18n="projects_title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-list">
+
+                <a href="https://github.com/Elec-291-Group/Reflow-Oven-Controller" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project1_name">8052 Oven Reflow Controller</h3>
+                    <p class="project-desc" data-i18n="project1_desc">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture using bit-addressable memory as a signal bus, wrote all core FSMs (button debouncing, UI updates, timing, and the 7-stage reflow control workflow), and configured timers and interrupts. Mid-project, I reviewed and rewrote 2,500+ lines of code to enforce the pub-sub pattern as new features were merged. The system drives an SSR via soft-PWM with proportional control, supports dual interaction through a 4x4 keypad/LCD hardware interface and a UART-based PC GUI (57600 baud), and includes thermocouple fault detection with emergency shutdown.</p>
+                    <div class="project-tech">
+                        <span>8052 Assembly</span>
+                        <span>Cooperative Multitasking</span>
+                        <span>Pub-Sub Architecture</span>
+                        <span>FSM Design</span>
+                        <span>SSR PWM Control</span>
+                        <span>UART</span>
+                        <span>DE10-Lite FPGA</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/UBC-Rocket/ulysses-ground-control" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project2_name">Ulysses Ground Control Station</h3>
+                    <p class="project-desc" data-i18n="project2_desc">Qt Quick ground control software for UBC Rocket's Ulysses vehicle. Built the C++ backend including the serial interface with the radio modem, alarm receive/processing/display pipeline, and parameter setting logic. Designed and implemented the settings page UI for customizing data display layouts at runtime. The station features a real-time telemetry dashboard with Kalman-filtered orientation, barometric and environmental data, engine control monitoring, a configurable PID controller interface for multiple flight modes, and a radio modem console with single/dual-port modes.</p>
+                    <div class="project-tech">
+                        <span>C++</span>
+                        <span>QML</span>
+                        <span>Qt Quick</span>
+                        <span>Serial Communication</span>
+                        <span>Radio Modem</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">03</span>
+                <h2 class="section-title" data-i18n="skills_title">Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_lang">Languages</h4>
+                    <div class="skill-tags">
+                        <span>8052 Assembly</span>
+                        <span>C/C++</span>
+                        <span>QML</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_embedded">Embedded &amp; Hardware</h4>
+                    <div class="skill-tags" data-i18n-tags="skill_items_embedded">
+                        <span>FSM Design</span>
+                        <span>PWM Control</span>
+                        <span>UART/Serial Communication</span>
+                        <span>Pub-Sub Architecture</span>
+                        <span>Cooperative Multitasking</span>
+                        <span>Timer/Interrupt Configuration</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_frameworks">Frameworks &amp; Libraries</h4>
+                    <div class="skill-tags">
+                        <span>Qt Quick</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_scripting">Scripting &amp; Automation</h4>
+                    <div class="skill-tags">
+                        <span>Selenium</span>
+                        <span>BeautifulSoup</span>
+                        <span>OpenCV</span>
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_tools">Software &amp; Tools</h4>
+                    <div class="skill-tags">
+                        <span>Quartus</span>
+                        <span>Qt Creator</span>
+                        <span>VS Code</span>
+                        <span>Git</span>
+                        <span>Office Suite</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_cad">CAD / Design</h4>
+                    <div class="skill-tags">
+                        <span>SolidWorks (Advanced Surfacing, Sheet Metal, Assembly)</span>
+                    </div>
+                </div>
+                <div class="skill-block">
+                    <h4 class="skill-cat" data-i18n="skill_cat_lab">Lab Equipment</h4>
+                    <div class="skill-tags" data-i18n-tags="skill_items_lab">
+                        <span>Logic Analyzer</span>
+                        <span>Multimeter</span>
+                        <span>Oscilloscope</span>
+                        <span>Signal Generator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">04</span>
+                <h2 class="section-title" data-i18n="experience_title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="experience-list">
+                <div class="exp-card">
+                    <div class="exp-timeline-dot"></div>
+                    <div class="exp-period" data-i18n="exp1_period">2025 - Present</div>
+                    <div class="exp-body">
+                        <h3 class="exp-role" data-i18n="exp1_role">Ground Control Software Engineer — Embedded Interface</h3>
+                        <span class="exp-company">UBC Rocket</span>
+                        <p class="exp-desc" data-i18n="exp1_desc">Building the ground control station for Ulysses using Qt Quick (C++/QML). Responsible for the C++ backend, radio modem interface, alarm processing, parameter settings, and settings page UI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">05</span>
+                <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-box">
+                <p class="contact-text" data-i18n="contact_text">I'm always open to new opportunities and interesting projects.
+                   Feel free to reach out!</p>
+                <a href="mailto:bti@student.ubc.ca" class="btn btn-primary btn-lg">bti@student.ubc.ca</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p data-i18n="footer_text">&copy; 2026 Bo Ti. Built with Rust &amp; Rocket.</p>
+            <p class="footer-sub" data-i18n="footer_claude">Developed purely by Claude Code.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
