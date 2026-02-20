@@ -20,7 +20,7 @@
         .tracks-scene {
             position: relative;
             width: 700px;
-            height: 700px;
+            height: 420px;
             flex-shrink: 0;
         }
 
@@ -29,7 +29,8 @@
             border-radius: 50%;
             border: 1px solid rgba(255,255,255,0.08);
             top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
+            /* scaleY = sin(15°) ≈ 0.259 — makes circles look tilted 15° from horizontal */
+            transform: translate(-50%, -50%) scaleY(0.259);
         }
 
         .center-node {
@@ -89,7 +90,7 @@
         .track:hover {
             box-shadow: 0 0 30px var(--card-glow, rgba(56,189,248,0.2));
             border-color: var(--card-color, var(--accent));
-            transform: var(--orbit-transform) scale(1.1) !important;
+            transform: scale(1.1) !important;
         }
 
         .track-icon { font-size: 1.8rem; }
@@ -129,9 +130,9 @@
             .tracks-scene {
                 transform: scale(0.47);
                 transform-origin: top center;
-                margin-bottom: -372px;
+                margin-bottom: -223px;
             }
-            .tracks-wrapper { min-height: 340px; }
+            .tracks-wrapper { min-height: 200px; }
         }
     </style>
 </head>
@@ -287,89 +288,14 @@
                 <h2 class="section-title" data-i18n="skills_title">Skills</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-grid">
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_lang">Languages</h4>
-                    <div class="skill-tags">
-                        <span>8052 Assembly</span>
-                        <span>C/C++</span>
-                        <span>QML</span>
-                        <span>Python</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_embedded">Embedded &amp; Hardware</h4>
-                    <div class="skill-tags" data-i18n-tags="skill_items_embedded">
-                        <span>FSM Design</span>
-                        <span>PWM Control</span>
-                        <span>UART/Serial Communication</span>
-                        <span>Pub-Sub Architecture</span>
-                        <span>Cooperative Multitasking</span>
-                        <span>Timer/Interrupt Configuration</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_frameworks">Frameworks &amp; Libraries</h4>
-                    <div class="skill-tags">
-                        <span>Qt Quick</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_scripting">Scripting &amp; Automation</h4>
-                    <div class="skill-tags">
-                        <span>Selenium</span>
-                        <span>BeautifulSoup</span>
-                        <span>OpenCV</span>
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_tools">Software &amp; Tools</h4>
-                    <div class="skill-tags">
-                        <span>Quartus</span>
-                        <span>Qt Creator</span>
-                        <span>VS Code</span>
-                        <span>Git</span>
-                        <span>Office Suite</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_cad">CAD / Design</h4>
-                    <div class="skill-tags">
-                        <span>SolidWorks (Advanced Surfacing, Sheet Metal, Assembly)</span>
-                    </div>
-                </div>
-                <div class="skill-block">
-                    <h4 class="skill-cat" data-i18n="skill_cat_lab">Lab Equipment</h4>
-                    <div class="skill-tags" data-i18n-tags="skill_items_lab">
-                        <span>Logic Analyzer</span>
-                        <span>Multimeter</span>
-                        <span>Oscilloscope</span>
-                        <span>Signal Generator</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRACKS -->
-    <section id="tracks" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tracks</h2>
-                <div class="section-line"></div>
-            </div>
-            <p style="color:var(--text-secondary);font-family:var(--font-display);font-size:0.78rem;margin-bottom:1rem;letter-spacing:0.05em;">Hover to explore &middot; Six challenge verticals</p>
             <div class="tracks-wrapper">
                 <div class="tracks-scene" id="tracksScene">
-                    <div class="orbit-ring" style="width:220px;height:220px;"></div>
-                    <div class="orbit-ring" style="width:380px;height:380px;opacity:0.6;"></div>
-                    <div class="orbit-ring" style="width:530px;height:530px;opacity:0.3;"></div>
+                    <div class="orbit-ring" style="width:400px;height:400px;"></div>
+                    <div class="orbit-ring" style="width:540px;height:540px;opacity:0.6;"></div>
+                    <div class="orbit-ring" style="width:650px;height:650px;opacity:0.3;"></div>
                     <div class="center-node">
-                        <span class="node-label">TreeHacks</span>
-                        <span class="node-title">2026</span>
+                        <span class="node-label">My</span>
+                        <span class="node-title">Skills</span>
                     </div>
                 </div>
             </div>
@@ -427,15 +353,16 @@
 
     <script src="script.js"></script>
     <script>
-        /* ---- TRACKS ORBITAL ANIMATION ---- */
+        /* ---- SKILLS ORBITAL ANIMATION ---- */
         (function () {
             var tracks = [
-                { name: "AI & ML",   icon: "🧠", color: "#5dffb0", glow: "rgba(93,255,176,0.2)",   radius: 190, startAngle: 0,                 speed: 0.0004,  desc: "Push the frontier of machine learning, LLMs, and intelligent systems that shape how we think." },
-                { name: "Health",    icon: "🧬", color: "#ff6b6b", glow: "rgba(255,107,107,0.2)",  radius: 190, startAngle: Math.PI,            speed: 0.0004,  desc: "Build tools and diagnostics that transform patient care and biomedical research." },
-                { name: "Climate",   icon: "🌍", color: "#ffe066", glow: "rgba(255,224,102,0.2)",  radius: 265, startAngle: Math.PI / 2,        speed: 0.00028, desc: "Engineer solutions for a sustainable future — energy, emissions, and environmental resilience." },
-                { name: "Fintech",   icon: "💸", color: "#6eb4ff", glow: "rgba(110,180,255,0.2)",  radius: 265, startAngle: (3 * Math.PI) / 2,  speed: 0.00028, desc: "Reimagine access to money, credit, and markets for everyone on the planet." },
-                { name: "Education", icon: "📚", color: "#d67eff", glow: "rgba(214,126,255,0.2)",  radius: 340, startAngle: Math.PI / 4,        speed: 0.00018, desc: "Create personalized, equitable, and joyful learning experiences at global scale." },
-                { name: "Security",  icon: "🔐", color: "#ff9d5c", glow: "rgba(255,157,92,0.2)",   radius: 340, startAngle: (5 * Math.PI) / 4, speed: 0.00018, desc: "Defend critical infrastructure and private data in an increasingly connected world." }
+                { name: "Languages",   icon: "💻", color: "#6eb4ff", glow: "rgba(110,180,255,0.2)", radius: 200, startAngle: 0,                    speed: 0.0004,  items: ["8052 Assembly", "C/C++", "QML", "Python"] },
+                { name: "Embedded",    icon: "⚙️", color: "#5dffb0", glow: "rgba(93,255,176,0.2)",  radius: 200, startAngle: Math.PI,               speed: 0.0004,  items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"] },
+                { name: "Frameworks",  icon: "🔧", color: "#ff9d5c", glow: "rgba(255,157,92,0.2)",  radius: 270, startAngle: Math.PI / 3,           speed: 0.00028, items: ["Qt Quick"] },
+                { name: "Scripting",   icon: "🐍", color: "#ffe066", glow: "rgba(255,224,102,0.2)", radius: 270, startAngle: Math.PI,               speed: 0.00028, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
+                { name: "Dev Tools",   icon: "🛠️", color: "#d67eff", glow: "rgba(214,126,255,0.2)", radius: 270, startAngle: (5 * Math.PI) / 3,    speed: 0.00028, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"] },
+                { name: "CAD",         icon: "📐", color: "#ff6b6b", glow: "rgba(255,107,107,0.2)", radius: 325, startAngle: Math.PI / 4,           speed: 0.00018, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"] },
+                { name: "Lab Gear",    icon: "🔬", color: "#38bdf8", glow: "rgba(56,189,248,0.2)",  radius: 325, startAngle: (5 * Math.PI) / 4,    speed: 0.00018, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"] }
             ];
 
             var scene   = document.getElementById('tracksScene');
@@ -453,7 +380,7 @@
                 el.addEventListener('mouseenter', function () {
                     ttTitle.textContent = t.name;
                     ttTitle.style.color = t.color;
-                    ttDesc.textContent  = t.desc;
+                    ttDesc.textContent  = t.items.join(' · ');
                     tooltip.classList.add('show');
                 });
                 el.addEventListener('mouseleave', function () { tooltip.classList.remove('show'); });
@@ -461,17 +388,17 @@
                 return { el: el, track: t, angle: t.startAngle };
             });
 
-            var cx = 350, cy = 350;
+            var cx = 350, cy = 210;
+            var tilt = Math.sin(15 * Math.PI / 180); // sin(15°) ≈ 0.259
             function animateTracks() {
                 elements.forEach(function (item) {
                     item.angle += item.track.speed * 16;
-                    var x   = cx + item.track.radius * Math.cos(item.angle) - 65;
-                    var y   = cy + item.track.radius * Math.sin(item.angle) - 65;
-                    var deg = -(item.angle * 180 / Math.PI);
+                    var x = cx + item.track.radius * Math.cos(item.angle) - 65;
+                    var y = cy + item.track.radius * Math.sin(item.angle) * tilt - 65;
                     item.el.style.left = x + 'px';
                     item.el.style.top  = y + 'px';
-                    item.el.style.setProperty('--orbit-transform', 'rotate(' + deg + 'deg)');
-                    item.el.style.transform = 'rotate(' + deg + 'deg)';
+                    // front half (sin>0) → z above center node (10); back half → behind it
+                    item.el.style.zIndex = Math.round(10 + Math.sin(item.angle) * 8);
                 });
                 requestAnimationFrame(animateTracks);
             }
