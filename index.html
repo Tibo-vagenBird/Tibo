@@ -8,6 +8,132 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ---- TRACKS ORBITAL ANIMATION ---- */
+        .tracks-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0 2rem;
+            overflow: hidden;
+        }
+
+        .tracks-scene {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            flex-shrink: 0;
+        }
+
+        .orbit-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.08);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-node {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, rgba(56,189,248,0.2), rgba(56,189,248,0.05));
+            border: 1.5px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 0 40px rgba(56,189,248,0.15), inset 0 0 20px rgba(56,189,248,0.05);
+        }
+
+        .node-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-family: var(--font-display);
+        }
+
+        .node-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-top: 2px;
+        }
+
+        .track {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 130px;
+            height: 130px;
+            margin-left: -65px;
+            margin-top: -65px;
+            border-radius: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
+            z-index: 5;
+            text-align: center;
+            padding: 12px;
+            will-change: transform;
+        }
+
+        .track:hover {
+            box-shadow: 0 0 30px var(--card-glow, rgba(56,189,248,0.2));
+            border-color: var(--card-color, var(--accent));
+            transform: var(--orbit-transform) scale(1.1) !important;
+        }
+
+        .track-icon { font-size: 1.8rem; }
+
+        .track-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--card-color, var(--accent));
+            line-height: 1.2;
+        }
+
+        .tracks-tooltip {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 24px;
+            max-width: 340px;
+            text-align: center;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            backdrop-filter: blur(12px);
+        }
+
+        .tracks-tooltip.show { opacity: 1; }
+        .tracks-tooltip h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .tracks-tooltip p { font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-display); line-height: 1.5; }
+
+        @media (max-width: 760px) {
+            .tracks-scene {
+                transform: scale(0.47);
+                transform-origin: top center;
+                margin-bottom: -372px;
+            }
+            .tracks-wrapper { min-height: 340px; }
+        }
+    </style>
 </head>
 <body>
     <!-- Dot-grid background canvas -->
@@ -228,6 +354,32 @@
         </div>
     </section>
 
+    <!-- TRACKS -->
+    <section id="tracks" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tracks</h2>
+                <div class="section-line"></div>
+            </div>
+            <p style="color:var(--text-secondary);font-family:var(--font-display);font-size:0.78rem;margin-bottom:1rem;letter-spacing:0.05em;">Hover to explore &middot; Six challenge verticals</p>
+            <div class="tracks-wrapper">
+                <div class="tracks-scene" id="tracksScene">
+                    <div class="orbit-ring" style="width:220px;height:220px;"></div>
+                    <div class="orbit-ring" style="width:380px;height:380px;opacity:0.6;"></div>
+                    <div class="orbit-ring" style="width:530px;height:530px;opacity:0.3;"></div>
+                    <div class="center-node">
+                        <span class="node-label">TreeHacks</span>
+                        <span class="node-title">2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tracks-tooltip" id="tracksTooltip">
+            <h3 id="ttTitle"></h3>
+            <p id="ttDesc"></p>
+        </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section id="experience" class="section section-alt">
         <div class="container">
@@ -274,5 +426,57 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        /* ---- TRACKS ORBITAL ANIMATION ---- */
+        (function () {
+            var tracks = [
+                { name: "AI & ML",   icon: "🧠", color: "#5dffb0", glow: "rgba(93,255,176,0.2)",   radius: 190, startAngle: 0,                 speed: 0.0004,  desc: "Push the frontier of machine learning, LLMs, and intelligent systems that shape how we think." },
+                { name: "Health",    icon: "🧬", color: "#ff6b6b", glow: "rgba(255,107,107,0.2)",  radius: 190, startAngle: Math.PI,            speed: 0.0004,  desc: "Build tools and diagnostics that transform patient care and biomedical research." },
+                { name: "Climate",   icon: "🌍", color: "#ffe066", glow: "rgba(255,224,102,0.2)",  radius: 265, startAngle: Math.PI / 2,        speed: 0.00028, desc: "Engineer solutions for a sustainable future — energy, emissions, and environmental resilience." },
+                { name: "Fintech",   icon: "💸", color: "#6eb4ff", glow: "rgba(110,180,255,0.2)",  radius: 265, startAngle: (3 * Math.PI) / 2,  speed: 0.00028, desc: "Reimagine access to money, credit, and markets for everyone on the planet." },
+                { name: "Education", icon: "📚", color: "#d67eff", glow: "rgba(214,126,255,0.2)",  radius: 340, startAngle: Math.PI / 4,        speed: 0.00018, desc: "Create personalized, equitable, and joyful learning experiences at global scale." },
+                { name: "Security",  icon: "🔐", color: "#ff9d5c", glow: "rgba(255,157,92,0.2)",   radius: 340, startAngle: (5 * Math.PI) / 4, speed: 0.00018, desc: "Defend critical infrastructure and private data in an increasingly connected world." }
+            ];
+
+            var scene   = document.getElementById('tracksScene');
+            var tooltip = document.getElementById('tracksTooltip');
+            var ttTitle = document.getElementById('ttTitle');
+            var ttDesc  = document.getElementById('ttDesc');
+            if (!scene) return;
+
+            var elements = tracks.map(function (t) {
+                var el = document.createElement('div');
+                el.className = 'track';
+                el.style.setProperty('--card-color', t.color);
+                el.style.setProperty('--card-glow',  t.glow);
+                el.innerHTML = '<div class="track-icon">' + t.icon + '</div><div class="track-name">' + t.name + '</div>';
+                el.addEventListener('mouseenter', function () {
+                    ttTitle.textContent = t.name;
+                    ttTitle.style.color = t.color;
+                    ttDesc.textContent  = t.desc;
+                    tooltip.classList.add('show');
+                });
+                el.addEventListener('mouseleave', function () { tooltip.classList.remove('show'); });
+                scene.appendChild(el);
+                return { el: el, track: t, angle: t.startAngle };
+            });
+
+            var cx = 350, cy = 350;
+            function animateTracks() {
+                elements.forEach(function (item) {
+                    item.angle += item.track.speed * 16;
+                    var x   = cx + item.track.radius * Math.cos(item.angle) - 65;
+                    var y   = cy + item.track.radius * Math.sin(item.angle) - 65;
+                    var deg = -(item.angle * 180 / Math.PI);
+                    item.el.style.left = x + 'px';
+                    item.el.style.top  = y + 'px';
+                    item.el.style.setProperty('--orbit-transform', 'rotate(' + deg + 'deg)');
+                    item.el.style.transform = 'rotate(' + deg + 'deg)';
+                });
+                requestAnimationFrame(animateTracks);
+            }
+            requestAnimationFrame(animateTracks);
+        })();
+    </script>
 </body>
 </html>
