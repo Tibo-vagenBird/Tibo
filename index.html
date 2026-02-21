@@ -13,55 +13,106 @@
         .tracks-wrapper {
             display: flex;
             justify-content: center;
-            padding: 1rem 0 2rem;
+            padding: 0.5rem 0 1.5rem;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Starfield canvas behind the orbit */
+        .tracks-starfield {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Nebula glow — soft atmospheric haze behind the orbit */
+        .tracks-nebula {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 320px;
+            background:
+                radial-gradient(ellipse 60% 45% at 35% 50%, rgba(56,189,248,0.1) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 65% 55%, rgba(240,160,48,0.08) 0%, transparent 70%),
+                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(110,180,255,0.07) 0%, transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(30px);
         }
 
         .tracks-scene {
             position: relative;
             width: 700px;
-            height: 420px;
+            height: 400px;
             flex-shrink: 0;
+            z-index: 1;
         }
 
         .orbit-ring {
             position: absolute;
             border-radius: 50%;
-            border: 1px solid rgba(255,255,255,0.08);
             top: 50%; left: 50%;
-            /* scaleY = sin(15°) ≈ 0.259 — makes circles look tilted 15° from horizontal */
             transform: translate(-50%, -50%) scaleY(0.259);
+        }
+
+        /* Main orbit ring — dashed with subtle glow */
+        .orbit-ring-main {
+            border: 1.5px dashed rgba(56,189,248,0.18);
+            box-shadow: 0 0 25px rgba(56,189,248,0.06);
+        }
+
+        /* Secondary orbit rings — thin solid, decorative */
+        .orbit-ring-inner {
+            border: 1px solid rgba(240,160,48,0.12);
+        }
+        .orbit-ring-outer {
+            border: 1px solid rgba(56,189,248,0.08);
         }
 
         .center-node {
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 35%, rgba(56,189,248,0.2), rgba(56,189,248,0.05));
-            border: 1.5px solid var(--accent);
+            background:
+                radial-gradient(circle at 40% 35%, rgba(255,255,255,0.2) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(240,160,48,0.45), rgba(240,120,30,0.15) 55%, rgba(10,14,23,0.5));
+            border: 1.5px solid rgba(240,160,48,0.35);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 10;
-            box-shadow: 0 0 40px rgba(56,189,248,0.15), inset 0 0 20px rgba(56,189,248,0.05);
+            box-shadow:
+                0 0 40px rgba(240,160,48,0.3),
+                0 0 80px rgba(240,120,30,0.12),
+                inset 0 0 25px rgba(240,160,48,0.12);
+            animation: center-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes center-pulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(240,160,48,0.3), 0 0 80px rgba(240,120,30,0.12), inset 0 0 25px rgba(240,160,48,0.12); }
+            50% { box-shadow: 0 0 50px rgba(240,160,48,0.38), 0 0 100px rgba(240,120,30,0.18), inset 0 0 30px rgba(240,160,48,0.18); }
         }
 
         .node-label {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: #f0a030;
             font-family: var(--font-display);
         }
 
         .node-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 800;
             margin-top: 2px;
+            color: #e8ecf0;
         }
 
         .track {
@@ -71,66 +122,134 @@
             height: 130px;
             margin-left: -65px;
             margin-top: -65px;
-            border-radius: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.18);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 4px;
             cursor: pointer;
-            transition: box-shadow 0.25s ease, border-color 0.25s ease;
             z-index: 5;
             text-align: center;
             padding: 12px;
-            will-change: transform;
+            will-change: transform, opacity;
+            overflow: hidden;
+            /* Liquid glass: translucent with colored tint */
+            background:
+                radial-gradient(circle at 30% 25%, rgba(255,255,255,0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 75%, var(--planet-lo, rgba(10,20,40,0.3)) 0%, transparent 60%),
+                radial-gradient(circle at 50% 50%, var(--planet-hi, rgba(80,180,240,0.25)), var(--planet-mid, rgba(40,100,160,0.15)) 60%, var(--planet-lo, rgba(10,40,70,0.2)) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow:
+                inset 0 1px 2px rgba(255,255,255,0.2),
+                inset 0 -4px 12px rgba(0,0,0,0.15),
+                0 4px 24px rgba(0,0,0,0.25),
+                0 0 25px var(--card-glow, rgba(56,189,248,0.15));
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Specular highlight — liquid glass caustic */
+        .track::before {
+            content: '';
+            position: absolute;
+            top: 6%;
+            left: 12%;
+            width: 40%;
+            height: 28%;
+            background: radial-gradient(ellipse,
+                rgba(255,255,255,0.4) 0%,
+                rgba(255,255,255,0.12) 40%,
+                transparent 100%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            filter: blur(2px);
+        }
+
+        /* Atmosphere rim — glass edge refraction */
+        .track::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            pointer-events: none;
+            z-index: 0;
+            box-shadow:
+                0 0 18px var(--card-glow, transparent),
+                inset 0 0 14px rgba(255,255,255,0.06);
         }
 
         .track:hover {
-            box-shadow: 0 0 30px var(--card-glow, rgba(56,189,248,0.2));
-            border-color: var(--card-color, var(--accent));
-            transform: scale(1.1) !important;
+            transform: scale(1.18) !important;
+            opacity: 1 !important;
+            border-color: rgba(255,255,255,0.22);
+            box-shadow:
+                inset 0 1px 2px rgba(255,255,255,0.2),
+                inset 0 -4px 14px rgba(0,0,0,0.15),
+                0 4px 24px rgba(0,0,0,0.3),
+                0 0 45px var(--card-glow, rgba(56,189,248,0.3)),
+                0 0 90px var(--card-glow, rgba(56,189,248,0.12));
         }
 
-        .track-icon { font-size: 1.8rem; }
+        .track:hover::after {
+            border-color: rgba(255,255,255,0.18);
+            box-shadow:
+                0 0 25px var(--card-glow, transparent),
+                inset 0 0 16px rgba(255,255,255,0.06);
+        }
 
         .track-name {
-            font-size: 0.7rem;
+            font-size: 0.88rem;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            color: var(--card-color, var(--accent));
-            line-height: 1.2;
+            color: #e8ecf0;
+            line-height: 1.25;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.7);
         }
 
         .tracks-tooltip {
-            position: fixed;
-            bottom: 40px;
+            position: absolute;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: rgba(17,20,30,0.92);
+            border: 1px solid rgba(56,189,248,0.15);
             border-radius: 12px;
             padding: 16px 24px;
-            max-width: 340px;
+            max-width: 380px;
             text-align: center;
             z-index: 200;
             opacity: 0;
             transition: opacity 0.3s;
             pointer-events: none;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.4), 0 0 20px rgba(56,189,248,0.05);
         }
 
         .tracks-tooltip.show { opacity: 1; }
-        .tracks-tooltip h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-        .tracks-tooltip p { font-size: 0.75rem; color: var(--text-secondary); font-family: var(--font-display); line-height: 1.5; }
+        .tracks-tooltip h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+        .tracks-tooltip p { font-size: 0.78rem; color: var(--text-secondary); font-family: var(--font-display); line-height: 1.6; }
+
+        @media (max-width: 900px) {
+            .tracks-scene {
+                transform: scale(0.65);
+                transform-origin: top center;
+                margin-bottom: -140px;
+            }
+            .tracks-wrapper { min-height: 280px; }
+        }
 
         @media (max-width: 760px) {
             .tracks-scene {
-                transform: scale(0.47);
+                transform: scale(0.48);
                 transform-origin: top center;
-                margin-bottom: -223px;
+                margin-bottom: -210px;
             }
             .tracks-wrapper { min-height: 200px; }
         }
@@ -281,7 +400,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section">
+    <section id="skills" class="section" style="position:relative;">
         <div class="container">
             <div class="section-header">
                 <span class="section-index">03</span>
@@ -289,10 +408,12 @@
                 <div class="section-line"></div>
             </div>
             <div class="tracks-wrapper">
+                <canvas class="tracks-starfield" id="tracksStarfield"></canvas>
+                <div class="tracks-nebula"></div>
                 <div class="tracks-scene" id="tracksScene">
-                    <div class="orbit-ring" style="width:400px;height:400px;"></div>
-                    <div class="orbit-ring" style="width:540px;height:540px;opacity:0.6;"></div>
-                    <div class="orbit-ring" style="width:650px;height:650px;opacity:0.3;"></div>
+                    <div class="orbit-ring orbit-ring-inner" style="width:360px;height:360px;"></div>
+                    <div class="orbit-ring orbit-ring-main" style="width:580px;height:580px;"></div>
+                    <div class="orbit-ring orbit-ring-outer" style="width:760px;height:760px;"></div>
                     <div class="center-node">
                         <span class="node-label">My</span>
                         <span class="node-title">Skills</span>
@@ -353,16 +474,59 @@
 
     <script src="script.js"></script>
     <script>
+        /* ---- STARFIELD BACKGROUND ---- */
+        (function () {
+            var canvas = document.getElementById('tracksStarfield');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+            function resize() {
+                var rect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            // Generate static stars
+            var stars = [];
+            for (var i = 0; i < 120; i++) {
+                stars.push({
+                    x: Math.random(),
+                    y: Math.random(),
+                    r: Math.random() * 1.4 + 0.4,
+                    alpha: Math.random() * 0.5 + 0.3,
+                    twinkleSpeed: Math.random() * 0.002 + 0.001,
+                    phase: Math.random() * Math.PI * 2
+                });
+            }
+
+            function drawStars(ts) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                stars.forEach(function (s) {
+                    var flicker = Math.sin(ts * s.twinkleSpeed + s.phase) * 0.2 + 0.8;
+                    ctx.beginPath();
+                    ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(180,210,240,' + (s.alpha * flicker).toFixed(3) + ')';
+                    ctx.fill();
+                });
+                requestAnimationFrame(drawStars);
+            }
+            requestAnimationFrame(drawStars);
+        })();
+
         /* ---- SKILLS ORBITAL ANIMATION ---- */
         (function () {
+            var S = 0.0003;
+            var R = 290;
+            var A = 2 * Math.PI / 7;
             var tracks = [
-                { name: "Languages",   icon: "💻", color: "#6eb4ff", glow: "rgba(110,180,255,0.2)", radius: 200, startAngle: 0,                    speed: 0.0004,  items: ["8052 Assembly", "C/C++", "QML", "Python"] },
-                { name: "Embedded",    icon: "⚙️", color: "#5dffb0", glow: "rgba(93,255,176,0.2)",  radius: 200, startAngle: Math.PI,               speed: 0.0004,  items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"] },
-                { name: "Frameworks",  icon: "🔧", color: "#ff9d5c", glow: "rgba(255,157,92,0.2)",  radius: 270, startAngle: Math.PI / 3,           speed: 0.00028, items: ["Qt Quick"] },
-                { name: "Scripting",   icon: "🐍", color: "#ffe066", glow: "rgba(255,224,102,0.2)", radius: 270, startAngle: Math.PI,               speed: 0.00028, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
-                { name: "Dev Tools",   icon: "🛠️", color: "#d67eff", glow: "rgba(214,126,255,0.2)", radius: 270, startAngle: (5 * Math.PI) / 3,    speed: 0.00028, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"] },
-                { name: "CAD",         icon: "📐", color: "#ff6b6b", glow: "rgba(255,107,107,0.2)", radius: 325, startAngle: Math.PI / 4,           speed: 0.00018, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"] },
-                { name: "Lab Gear",    icon: "🔬", color: "#38bdf8", glow: "rgba(56,189,248,0.2)",  radius: 325, startAngle: (5 * Math.PI) / 4,    speed: 0.00018, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"] }
+                { name: "Languages",  color: "#6eb4ff", glow: "rgba(110,180,255,0.3)",  planetHi: "rgba(100,200,255,0.5)", planetMid: "rgba(50,140,210,0.3)", planetLo: "rgba(20,80,140,0.2)", radius: R, startAngle: A * 0, speed: S, items: ["8052 Assembly", "C/C++", "QML", "Python"] },
+                { name: "Embedded",   color: "#5dffb0", glow: "rgba(93,255,176,0.3)",   planetHi: "rgba(90,230,180,0.5)", planetMid: "rgba(30,160,130,0.3)", planetLo: "rgba(15,90,80,0.2)", radius: R, startAngle: A * 1, speed: S, items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"] },
+                { name: "Frameworks", color: "#ff9d5c", glow: "rgba(255,157,92,0.3)",    planetHi: "rgba(255,175,100,0.48)", planetMid: "rgba(200,110,55,0.28)", planetLo: "rgba(120,60,25,0.18)", radius: R, startAngle: A * 2, speed: S, items: ["Qt Quick"] },
+                { name: "Scripting",  color: "#ffe066", glow: "rgba(255,224,102,0.3)",   planetHi: "rgba(255,235,110,0.48)", planetMid: "rgba(200,180,70,0.28)", planetLo: "rgba(120,100,30,0.18)", radius: R, startAngle: A * 3, speed: S, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
+                { name: "Dev Tools",  color: "#d67eff", glow: "rgba(214,126,255,0.3)",   planetHi: "rgba(200,150,255,0.48)", planetMid: "rgba(140,80,220,0.28)", planetLo: "rgba(70,35,140,0.18)", radius: R, startAngle: A * 4, speed: S, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"] },
+                { name: "CAD",        color: "#ff6b6b", glow: "rgba(255,107,107,0.3)",   planetHi: "rgba(255,120,120,0.48)", planetMid: "rgba(200,70,70,0.28)", planetLo: "rgba(120,35,35,0.18)", radius: R, startAngle: A * 5, speed: S, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"] },
+                { name: "Lab Gear",   color: "#38bdf8", glow: "rgba(56,189,248,0.3)",    planetHi: "rgba(85,225,255,0.5)", planetMid: "rgba(30,160,210,0.3)", planetLo: "rgba(15,90,120,0.2)", radius: R, startAngle: A * 6, speed: S, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"] }
             ];
 
             var scene   = document.getElementById('tracksScene');
@@ -376,11 +540,14 @@
                 el.className = 'track';
                 el.style.setProperty('--card-color', t.color);
                 el.style.setProperty('--card-glow',  t.glow);
-                el.innerHTML = '<div class="track-icon">' + t.icon + '</div><div class="track-name">' + t.name + '</div>';
+                el.style.setProperty('--planet-hi',  t.planetHi);
+                el.style.setProperty('--planet-mid', t.planetMid);
+                el.style.setProperty('--planet-lo',  t.planetLo);
+                el.innerHTML = '<div class="track-name">' + t.name + '</div>';
                 el.addEventListener('mouseenter', function () {
                     ttTitle.textContent = t.name;
                     ttTitle.style.color = t.color;
-                    ttDesc.textContent  = t.items.join(' · ');
+                    ttDesc.textContent  = t.items.join(' \u00b7 ');
                     tooltip.classList.add('show');
                 });
                 el.addEventListener('mouseleave', function () { tooltip.classList.remove('show'); });
@@ -388,17 +555,21 @@
                 return { el: el, track: t, angle: t.startAngle };
             });
 
-            var cx = 350, cy = 210;
-            var tilt = Math.sin(15 * Math.PI / 180); // sin(15°) ≈ 0.259
+            var cx = 350, cy = 200;
+            var tilt = Math.sin(15 * Math.PI / 180);
             function animateTracks() {
                 elements.forEach(function (item) {
                     item.angle += item.track.speed * 16;
                     var x = cx + item.track.radius * Math.cos(item.angle) - 65;
                     var y = cy + item.track.radius * Math.sin(item.angle) * tilt - 65;
+                    var depth = Math.sin(item.angle);
+                    item.el.style.zIndex = Math.round(10 + depth * 8);
+                    var s = 0.85 + 0.15 * (depth + 1) / 2;
+                    var o = 0.7 + 0.3 * (depth + 1) / 2;
+                    item.el.style.transform = 'scale(' + s.toFixed(3) + ')';
+                    item.el.style.opacity   = o.toFixed(3);
                     item.el.style.left = x + 'px';
                     item.el.style.top  = y + 'px';
-                    // front half (sin>0) → z above center node (10); back half → behind it
-                    item.el.style.zIndex = Math.round(10 + Math.sin(item.angle) * 8);
                 });
                 requestAnimationFrame(animateTracks);
             }
