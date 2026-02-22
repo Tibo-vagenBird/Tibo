@@ -118,6 +118,34 @@ function toggleLang() {
 })();
 
 
+// ---- THEME TOGGLE ----
+function getTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+}
+
+function updateThemeIcon() {
+    var icon = document.getElementById('themeIcon');
+    if (!icon) return;
+    icon.innerHTML = getTheme() === 'light' ? '&#9728;' : '&#9790;';
+}
+
+function toggleTheme() {
+    var isLight = getTheme() === 'light';
+    if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+    if (typeof window.redrawGrid === 'function') window.redrawGrid();
+}
+
+// Set correct icon on load
+updateThemeIcon();
+
+
 // ---- MOBILE MENU ----
 function toggleMenu() {
     var links = document.getElementById("navLinks");
@@ -154,7 +182,8 @@ document.querySelectorAll('.nav-links a').forEach(function (a) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         var spacing = 32;
         var dotSize = 0.8;
-        ctx.fillStyle = "rgba(56, 189, 248, 0.15)";
+        var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        ctx.fillStyle = isLight ? "rgba(14, 143, 208, 0.18)" : "rgba(56, 189, 248, 0.15)";
 
         for (var x = spacing; x < window.innerWidth; x += spacing) {
             for (var y = spacing; y < window.innerHeight; y += spacing) {
@@ -167,6 +196,7 @@ document.querySelectorAll('.nav-links a').forEach(function (a) {
 
     resize();
     window.addEventListener("resize", resize);
+    window.redrawGrid = function() { draw(); };
 })();
 
 
@@ -193,7 +223,8 @@ document.querySelectorAll('.nav-links a').forEach(function (a) {
     }
 
     function drawGrid() {
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.06)";
+        var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        ctx.strokeStyle = isLight ? "rgba(14, 143, 208, 0.08)" : "rgba(56, 189, 248, 0.06)";
         ctx.lineWidth = 0.5;
         var step = 20;
         for (var x = 0; x <= W; x += step) {
@@ -214,11 +245,13 @@ document.querySelectorAll('.nav-links a').forEach(function (a) {
         ctx.clearRect(0, 0, W, H);
         drawGrid();
 
+        var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
         // Main signal — sine-ish waveform
         ctx.beginPath();
-        ctx.strokeStyle = "rgba(56, 189, 248, 0.8)";
+        ctx.strokeStyle = isLight ? "rgba(14, 143, 208, 0.75)" : "rgba(56, 189, 248, 0.8)";
         ctx.lineWidth = 1.8;
-        ctx.shadowColor = "rgba(56, 189, 248, 0.5)";
+        ctx.shadowColor = isLight ? "rgba(14, 143, 208, 0.4)" : "rgba(56, 189, 248, 0.5)";
         ctx.shadowBlur = 6;
 
         for (var x = 0; x < W; x++) {

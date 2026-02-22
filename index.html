@@ -7,40 +7,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <script>
+        (function(){var t=localStorage.getItem('theme');if(t!=='dark')document.documentElement.setAttribute('data-theme','light');})();
+    </script>
     <link rel="stylesheet" href="style.css">
     <style>
         /* ---- TRACKS ORBITAL ANIMATION ---- */
         .tracks-wrapper {
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 0.5rem 0 1.5rem;
             overflow: hidden;
             position: relative;
-        }
-
-        /* Starfield canvas behind the orbit */
-        .tracks-starfield {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Nebula glow — soft atmospheric haze behind the orbit */
-        .tracks-nebula {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 650px;
-            height: 320px;
-            background:
-                radial-gradient(ellipse 60% 45% at 35% 50%, rgba(56,189,248,0.1) 0%, transparent 70%),
-                radial-gradient(ellipse 50% 40% at 65% 55%, rgba(240,160,48,0.08) 0%, transparent 70%),
-                radial-gradient(ellipse 70% 50% at 50% 50%, rgba(110,180,255,0.07) 0%, transparent 80%);
-            pointer-events: none;
-            z-index: 0;
-            filter: blur(30px);
+            min-height: 500px;
         }
 
         .tracks-scene {
@@ -49,6 +29,12 @@
             height: 400px;
             flex-shrink: 0;
             z-index: 1;
+            transform: translateY(40px);
+            transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .tracks-scene.scene-hovered {
+            transform: translateY(-20px);
         }
 
         .orbit-ring {
@@ -182,6 +168,7 @@
                 inset 0 0 14px rgba(255,255,255,0.06);
         }
 
+        .track-active,
         .track:hover {
             transform: scale(1.18) !important;
             opacity: 1 !important;
@@ -194,6 +181,7 @@
                 0 0 90px var(--card-glow, rgba(56,189,248,0.12));
         }
 
+        .track-active::after,
         .track:hover::after {
             border-color: rgba(255,255,255,0.18);
             box-shadow:
@@ -215,9 +203,9 @@
 
         .tracks-tooltip {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(10px);
             background: rgba(17,20,30,0.92);
             border: 1px solid rgba(56,189,248,0.15);
             border-radius: 12px;
@@ -226,32 +214,86 @@
             text-align: center;
             z-index: 200;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.35s, transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
             pointer-events: none;
             backdrop-filter: blur(16px);
             box-shadow: 0 4px 30px rgba(0,0,0,0.4), 0 0 20px rgba(56,189,248,0.05);
         }
 
-        .tracks-tooltip.show { opacity: 1; }
+        .tracks-tooltip.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         .tracks-tooltip h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
         .tracks-tooltip p { font-size: 0.78rem; color: var(--text-secondary); font-family: var(--font-display); line-height: 1.6; }
 
         @media (max-width: 900px) {
             .tracks-scene {
-                transform: scale(0.65);
+                transform: translateY(40px) scale(0.65);
                 transform-origin: top center;
                 margin-bottom: -140px;
             }
-            .tracks-wrapper { min-height: 280px; }
+            .tracks-scene.scene-hovered {
+                transform: translateY(-20px) scale(0.65);
+            }
+            .tracks-wrapper { min-height: 320px; }
+        }
+
+        /* ---- LIGHT MODE ORBITAL OVERRIDES ---- */
+        [data-theme="light"] .orbit-ring-main {
+            border-color: rgba(14,143,208,0.22);
+            box-shadow: 0 0 25px rgba(14,143,208,0.08);
+        }
+        [data-theme="light"] .orbit-ring-inner {
+            border-color: rgba(208,138,24,0.18);
+        }
+        [data-theme="light"] .orbit-ring-outer {
+            border-color: rgba(14,143,208,0.12);
+        }
+        [data-theme="light"] .center-node {
+            background:
+                radial-gradient(circle at 40% 35%, rgba(255,255,255,0.35) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(208,138,24,0.5), rgba(208,100,20,0.2) 55%, rgba(245,246,250,0.4));
+            border-color: rgba(208,138,24,0.4);
+            box-shadow:
+                0 0 40px rgba(208,138,24,0.25),
+                0 0 80px rgba(208,100,20,0.1),
+                inset 0 0 25px rgba(208,138,24,0.1);
+        }
+        [data-theme="light"] .track {
+            border-color: rgba(0,0,0,0.12);
+            box-shadow:
+                inset 0 1px 2px rgba(255,255,255,0.4),
+                inset 0 -4px 12px rgba(0,0,0,0.08),
+                0 4px 24px rgba(0,0,0,0.12),
+                0 0 25px var(--card-glow, rgba(14,143,208,0.1));
+        }
+        [data-theme="light"] .track::after {
+            border-color: rgba(0,0,0,0.08);
+        }
+        [data-theme="light"] .track-name {
+            color: #1a1e2e;
+            text-shadow: 0 1px 4px rgba(255,255,255,0.6);
+        }
+        [data-theme="light"] .node-title {
+            color: #1a1e2e;
+        }
+        [data-theme="light"] .tracks-tooltip {
+            background: rgba(255,255,255,0.94);
+            border-color: rgba(14,143,208,0.2);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.12), 0 0 20px rgba(14,143,208,0.06);
+        }
+        [data-theme="light"] .tracks-tooltip h3 {
+            color: #1a1e2e;
         }
 
         @media (max-width: 760px) {
             .tracks-scene {
-                transform: scale(0.48);
+                transform: translateY(30px) scale(0.48);
                 transform-origin: top center;
                 margin-bottom: -210px;
             }
-            .tracks-wrapper { min-height: 200px; }
+            .tracks-scene.scene-hovered {
+                transform: translateY(-15px) scale(0.48);
+            }
+            .tracks-wrapper { min-height: 240px; }
         }
     </style>
 </head>
@@ -272,6 +314,9 @@
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-right">
+                <button class="theme-toggle" id="themeSwitch" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <span class="theme-icon" id="themeIcon">&#9728;</span>
+                </button>
                 <button class="lang-toggle" id="langSwitch" onclick="toggleLang()" aria-label="Toggle language">
                     <span class="lang-label" id="langLabel">CN</span>
                 </button>
@@ -400,7 +445,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section" style="position:relative;">
+    <section id="skills" class="section section-alt" style="position:relative;">
         <div class="container">
             <div class="section-header">
                 <span class="section-index">03</span>
@@ -408,8 +453,6 @@
                 <div class="section-line"></div>
             </div>
             <div class="tracks-wrapper">
-                <canvas class="tracks-starfield" id="tracksStarfield"></canvas>
-                <div class="tracks-nebula"></div>
                 <div class="tracks-scene" id="tracksScene">
                     <div class="orbit-ring orbit-ring-inner" style="width:360px;height:360px;"></div>
                     <div class="orbit-ring orbit-ring-main" style="width:580px;height:580px;"></div>
@@ -474,46 +517,6 @@
 
     <script src="script.js"></script>
     <script>
-        /* ---- STARFIELD BACKGROUND ---- */
-        (function () {
-            var canvas = document.getElementById('tracksStarfield');
-            if (!canvas) return;
-            var ctx = canvas.getContext('2d');
-            function resize() {
-                var rect = canvas.parentElement.getBoundingClientRect();
-                canvas.width = rect.width;
-                canvas.height = rect.height;
-            }
-            resize();
-            window.addEventListener('resize', resize);
-
-            // Generate static stars
-            var stars = [];
-            for (var i = 0; i < 120; i++) {
-                stars.push({
-                    x: Math.random(),
-                    y: Math.random(),
-                    r: Math.random() * 1.4 + 0.4,
-                    alpha: Math.random() * 0.5 + 0.3,
-                    twinkleSpeed: Math.random() * 0.002 + 0.001,
-                    phase: Math.random() * Math.PI * 2
-                });
-            }
-
-            function drawStars(ts) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                stars.forEach(function (s) {
-                    var flicker = Math.sin(ts * s.twinkleSpeed + s.phase) * 0.2 + 0.8;
-                    ctx.beginPath();
-                    ctx.arc(s.x * canvas.width, s.y * canvas.height, s.r, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(180,210,240,' + (s.alpha * flicker).toFixed(3) + ')';
-                    ctx.fill();
-                });
-                requestAnimationFrame(drawStars);
-            }
-            requestAnimationFrame(drawStars);
-        })();
-
         /* ---- SKILLS ORBITAL ANIMATION ---- */
         (function () {
             var S = 0.0003;
@@ -549,8 +552,12 @@
                     ttTitle.style.color = t.color;
                     ttDesc.textContent  = t.items.join(' \u00b7 ');
                     tooltip.classList.add('show');
+                    scene.classList.add('scene-hovered');
                 });
-                el.addEventListener('mouseleave', function () { tooltip.classList.remove('show'); });
+                el.addEventListener('mouseleave', function () {
+                    tooltip.classList.remove('show');
+                    scene.classList.remove('scene-hovered');
+                });
                 scene.appendChild(el);
                 return { el: el, track: t, angle: t.startAngle };
             });
@@ -560,8 +567,8 @@
             function animateTracks() {
                 elements.forEach(function (item) {
                     item.angle += item.track.speed * 16;
-                    var x = cx + item.track.radius * Math.cos(item.angle) - 65;
-                    var y = cy + item.track.radius * Math.sin(item.angle) * tilt - 65;
+                    var x = cx + item.track.radius * Math.cos(item.angle);
+                    var y = cy + item.track.radius * Math.sin(item.angle) * tilt;
                     var depth = Math.sin(item.angle);
                     item.el.style.zIndex = Math.round(10 + depth * 8);
                     var s = 0.85 + 0.15 * (depth + 1) / 2;
@@ -574,6 +581,90 @@
                 requestAnimationFrame(animateTracks);
             }
             requestAnimationFrame(animateTracks);
+
+            /* ---- AUTO-CYCLE: independent of user hover ---- */
+            var skillsSection = document.getElementById('skills');
+            var autoIndex = 0;
+            var autoTimer = null;
+            var userHovering = false;
+
+            function showPlanet(i) {
+                var t = tracks[i];
+                ttTitle.textContent = t.name;
+                ttTitle.style.color = t.color;
+                ttDesc.textContent  = t.items.join(' \u00b7 ');
+                tooltip.classList.add('show');
+                scene.classList.add('scene-hovered');
+                elements.forEach(function (item) { item.el.classList.remove('track-active'); });
+                elements[i].el.classList.add('track-active');
+            }
+
+            function hidePlanet() {
+                tooltip.classList.remove('show');
+                scene.classList.remove('scene-hovered');
+                elements.forEach(function (item) { item.el.classList.remove('track-active'); });
+            }
+
+            function advanceAuto() {
+                showPlanet(autoIndex);
+                autoIndex = (autoIndex + 1) % tracks.length;
+            }
+
+            function resetTimer() {
+                if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+                autoTimer = setInterval(function () {
+                    if (!userHovering) advanceAuto();
+                }, 5000);
+            }
+
+            function startAuto() {
+                if (autoTimer) return;
+                advanceAuto();
+                autoTimer = setInterval(function () {
+                    if (!userHovering) advanceAuto();
+                }, 5000);
+            }
+
+            function stopAuto() {
+                if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+                hidePlanet();
+            }
+
+            // User hover: show hovered planet, on leave restore current auto planet & restart 5s
+            elements.forEach(function (item, i) {
+                item.el.addEventListener('mouseenter', function () {
+                    userHovering = true;
+                    showPlanet(i);
+                });
+                item.el.addEventListener('mouseleave', function () {
+                    userHovering = false;
+                    if (sectionVisible) {
+                        hidePlanet();
+                        setTimeout(function () {
+                            if (!userHovering && sectionVisible) {
+                                var current = (autoIndex - 1 + tracks.length) % tracks.length;
+                                showPlanet(current);
+                                resetTimer();
+                            }
+                        }, 1500);
+                    }
+                });
+            });
+
+            // IntersectionObserver: start/stop when skills section enters/leaves viewport
+            var sectionVisible = false;
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    sectionVisible = entry.isIntersecting;
+                    if (entry.isIntersecting) {
+                        startAuto();
+                    } else {
+                        stopAuto();
+                        autoIndex = 0;
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(skillsSection);
         })();
     </script>
 </body>
