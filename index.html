@@ -458,8 +458,8 @@
                     <div class="orbit-ring orbit-ring-main" style="width:580px;height:580px;"></div>
                     <div class="orbit-ring orbit-ring-outer" style="width:760px;height:760px;"></div>
                     <div class="center-node">
-                        <span class="node-label">My</span>
-                        <span class="node-title">Skills</span>
+                        <span class="node-label" data-i18n="skills_my">My</span>
+                        <span class="node-title" data-i18n="skills_node_title">Skills</span>
                     </div>
                 </div>
             </div>
@@ -523,13 +523,13 @@
             var R = 290;
             var A = 2 * Math.PI / 7;
             var tracks = [
-                { name: "Languages",  color: "#6eb4ff", glow: "rgba(110,180,255,0.3)",  planetHi: "rgba(100,200,255,0.5)", planetMid: "rgba(50,140,210,0.3)", planetLo: "rgba(20,80,140,0.2)", radius: R, startAngle: A * 0, speed: S, items: ["8052 Assembly", "C/C++", "QML", "Python"] },
-                { name: "Embedded",   color: "#5dffb0", glow: "rgba(93,255,176,0.3)",   planetHi: "rgba(90,230,180,0.5)", planetMid: "rgba(30,160,130,0.3)", planetLo: "rgba(15,90,80,0.2)", radius: R, startAngle: A * 1, speed: S, items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"] },
-                { name: "Frameworks", color: "#ff9d5c", glow: "rgba(255,157,92,0.3)",    planetHi: "rgba(255,175,100,0.48)", planetMid: "rgba(200,110,55,0.28)", planetLo: "rgba(120,60,25,0.18)", radius: R, startAngle: A * 2, speed: S, items: ["Qt Quick"] },
-                { name: "Scripting",  color: "#ffe066", glow: "rgba(255,224,102,0.3)",   planetHi: "rgba(255,235,110,0.48)", planetMid: "rgba(200,180,70,0.28)", planetLo: "rgba(120,100,30,0.18)", radius: R, startAngle: A * 3, speed: S, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
-                { name: "Dev Tools",  color: "#d67eff", glow: "rgba(214,126,255,0.3)",   planetHi: "rgba(200,150,255,0.48)", planetMid: "rgba(140,80,220,0.28)", planetLo: "rgba(70,35,140,0.18)", radius: R, startAngle: A * 4, speed: S, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"] },
-                { name: "CAD",        color: "#ff6b6b", glow: "rgba(255,107,107,0.3)",   planetHi: "rgba(255,120,120,0.48)", planetMid: "rgba(200,70,70,0.28)", planetLo: "rgba(120,35,35,0.18)", radius: R, startAngle: A * 5, speed: S, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"] },
-                { name: "Lab Gear",   color: "#38bdf8", glow: "rgba(56,189,248,0.3)",    planetHi: "rgba(85,225,255,0.5)", planetMid: "rgba(30,160,210,0.3)", planetLo: "rgba(15,90,120,0.2)", radius: R, startAngle: A * 6, speed: S, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"] }
+                { name: "Languages",  nameZh: "\u7f16\u7a0b\u8bed\u8a00", color: "#6eb4ff", glow: "rgba(110,180,255,0.3)",  planetHi: "rgba(100,200,255,0.5)", planetMid: "rgba(50,140,210,0.3)", planetLo: "rgba(20,80,140,0.2)", radius: R, startAngle: A * 0, speed: S, items: ["8052 Assembly", "C/C++", "QML", "Python"], itemsZh: ["8052 \u6c47\u7f16", "C/C++", "QML", "Python"] },
+                { name: "Embedded",   nameZh: "\u5d4c\u5165\u5f0f",   color: "#5dffb0", glow: "rgba(93,255,176,0.3)",   planetHi: "rgba(90,230,180,0.5)", planetMid: "rgba(30,160,130,0.3)", planetLo: "rgba(15,90,80,0.2)", radius: R, startAngle: A * 1, speed: S, items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"], itemsZh: ["\u72b6\u6001\u673a\u8bbe\u8ba1", "PWM \u63a7\u5236", "UART/\u4e32\u53e3\u901a\u4fe1", "\u53d1\u5e03-\u8ba2\u9605\u67b6\u6784", "\u534f\u4f5c\u5f0f\u591a\u4efb\u52a1", "\u5b9a\u65f6\u5668/\u4e2d\u65ad\u914d\u7f6e"] },
+                { name: "Frameworks", nameZh: "\u6846\u67b6\u4e0e\u5e93", color: "#ff9d5c", glow: "rgba(255,157,92,0.3)",    planetHi: "rgba(255,175,100,0.48)", planetMid: "rgba(200,110,55,0.28)", planetLo: "rgba(120,60,25,0.18)", radius: R, startAngle: A * 2, speed: S, items: ["Qt Quick"], itemsZh: ["Qt Quick"] },
+                { name: "Scripting",  nameZh: "\u811a\u672c\u4e0e\u81ea\u52a8\u5316", color: "#ffe066", glow: "rgba(255,224,102,0.3)",   planetHi: "rgba(255,235,110,0.48)", planetMid: "rgba(200,180,70,0.28)", planetLo: "rgba(120,100,30,0.18)", radius: R, startAngle: A * 3, speed: S, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"], itemsZh: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
+                { name: "Dev Tools",  nameZh: "\u8f6f\u4ef6\u4e0e\u5de5\u5177", color: "#d67eff", glow: "rgba(214,126,255,0.3)",   planetHi: "rgba(200,150,255,0.48)", planetMid: "rgba(140,80,220,0.28)", planetLo: "rgba(70,35,140,0.18)", radius: R, startAngle: A * 4, speed: S, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"], itemsZh: ["Quartus", "Qt Creator", "VS Code", "Git", "Office \u5957\u4ef6"] },
+                { name: "CAD",        nameZh: "CAD / \u8bbe\u8ba1",   color: "#ff6b6b", glow: "rgba(255,107,107,0.3)",   planetHi: "rgba(255,120,120,0.48)", planetMid: "rgba(200,70,70,0.28)", planetLo: "rgba(120,35,35,0.18)", radius: R, startAngle: A * 5, speed: S, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"], itemsZh: ["SolidWorks", "\u9ad8\u7ea7\u66f2\u9762", "\u9499\u91d1", "\u88c5\u914d\u4f53"] },
+                { name: "Lab Gear",   nameZh: "\u5b9e\u9a8c\u5ba4\u8bbe\u5907", color: "#38bdf8", glow: "rgba(56,189,248,0.3)",    planetHi: "rgba(85,225,255,0.5)", planetMid: "rgba(30,160,210,0.3)", planetLo: "rgba(15,90,120,0.2)", radius: R, startAngle: A * 6, speed: S, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"], itemsZh: ["\u903b\u8f91\u5206\u6790\u4eea", "\u4e07\u7528\u8868", "\u793a\u6ce2\u5668", "\u4fe1\u53f7\u53d1\u751f\u5668"] }
             ];
 
             var scene   = document.getElementById('tracksScene');
@@ -537,6 +537,13 @@
             var ttTitle = document.getElementById('ttTitle');
             var ttDesc  = document.getElementById('ttDesc');
             if (!scene) return;
+
+            function getTrackName(t) {
+                return currentLang === 'zh' && t.nameZh ? t.nameZh : t.name;
+            }
+            function getTrackItems(t) {
+                return currentLang === 'zh' && t.itemsZh ? t.itemsZh : t.items;
+            }
 
             var elements = tracks.map(function (t) {
                 var el = document.createElement('div');
@@ -546,11 +553,11 @@
                 el.style.setProperty('--planet-hi',  t.planetHi);
                 el.style.setProperty('--planet-mid', t.planetMid);
                 el.style.setProperty('--planet-lo',  t.planetLo);
-                el.innerHTML = '<div class="track-name">' + t.name + '</div>';
+                el.innerHTML = '<div class="track-name">' + getTrackName(t) + '</div>';
                 el.addEventListener('mouseenter', function () {
-                    ttTitle.textContent = t.name;
+                    ttTitle.textContent = getTrackName(t);
                     ttTitle.style.color = t.color;
-                    ttDesc.textContent  = t.items.join(' \u00b7 ');
+                    ttDesc.textContent  = getTrackItems(t).join(' \u00b7 ');
                     tooltip.classList.add('show');
                     scene.classList.add('scene-hovered');
                 });
@@ -561,6 +568,13 @@
                 scene.appendChild(el);
                 return { el: el, track: t, angle: t.startAngle };
             });
+
+            // Expose a function to refresh track labels on language switch
+            window.updateSkillsLang = function () {
+                elements.forEach(function (item) {
+                    item.el.querySelector('.track-name').textContent = getTrackName(item.track);
+                });
+            };
 
             var cx = 350, cy = 200;
             var tilt = Math.sin(15 * Math.PI / 180);
@@ -590,9 +604,9 @@
 
             function showPlanet(i) {
                 var t = tracks[i];
-                ttTitle.textContent = t.name;
+                ttTitle.textContent = getTrackName(t);
                 ttTitle.style.color = t.color;
-                ttDesc.textContent  = t.items.join(' \u00b7 ');
+                ttDesc.textContent  = getTrackItems(t).join(' \u00b7 ');
                 tooltip.classList.add('show');
                 scene.classList.add('scene-hovered');
                 elements.forEach(function (item) { item.el.classList.remove('track-active'); });
