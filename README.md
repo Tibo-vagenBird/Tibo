@@ -1,52 +1,54 @@
-# Personal Website v2
+# tibosaqira.org
 
-A vanilla HTML/CSS/JS portfolio site for an embedded software developer, featuring bilingual support, orbital skill animations, signal waveform canvas, and glassmorphism design — no frameworks or build tools.
+In Mongolian, *Tibo* speaks of the center — vast, quiet, a word that reaches toward something it cannot quite hold. An ambition without edges, a room without walls.
+
+*Saqira* is light. Not the light that follows, but the light that completes — the warmth that turns an endless space into a place worth standing in.
+
+Two names, brother and sister, given by the same family and joined here into one word. Together they are whole.
+
+---
+
+A personal portfolio for an embedded software developer, hand-built with pure HTML, CSS, and JavaScript — no frameworks, no build tools, no dependencies.
 
 ## Features
 
-- **Zero dependencies** — Pure HTML, CSS, and JavaScript; no build step
-- **Bilingual** — English/Chinese toggle with auto-detection via IP geolocation
-- **Dark/Light theme** — Persisted in localStorage
-- **Interactive visuals** — Orbital skills animation, animated oscilloscope canvas, dot grid background
-- **Responsive** — Mobile hamburger menu, flexible layouts down to small screens
+- **Bilingual** — Full English and Chinese support with a one-click toggle. Language is auto-detected on first visit via IP geolocation.
+- **Dark / Light theme** — Switchable from the navbar, persisted across sessions in localStorage.
+- **Responsive** — Adapts from desktop to mobile with a collapsible hamburger menu.
 
 ## Sections
 
-| Section | Content |
-|---------|---------|
-| Hero | Name, title, bio, signal waveform canvas |
-| About | Terminal-style profile card |
-| Projects | 8052 Reflow Controller, Ulysses Ground Control Station |
-| Skills | 7-category orbital animation (Languages, Embedded, Frameworks, etc.) |
-| Experience | Timeline — UBC Rocket Ground Control Software Engineer |
-| Contact | Email CTA |
+- **Hero** — An animated oscilloscope canvas draws sine and square waveforms behind the introduction, reflecting the embedded systems theme.
+- **About** — A terminal-style profile card that types itself out line by line.
+- **Projects** — Featured work including the 8052 Reflow Controller (pure Assembly, FSM architecture) and the Ulysses Ground Control Station (Qt Quick C++/QML for UBC Rocket).
+- **Skills** — Seven skill categories orbit in a 3D-like ring animation, auto-cycling every five seconds. Hover to pause and inspect. Categories span languages, embedded techniques, frameworks, scripting, dev tools, CAD, and lab equipment.
+- **Experience** — A vertical timeline with animated entries.
+- **Contact** — Direct email link.
+
+## Tech
+
+- **Canvas API** — Dot grid background and signal waveform visualization, GPU-accelerated via requestAnimationFrame.
+- **CSS custom properties** — All theming driven by variables, with glassmorphism card effects and smooth cubic-bezier transitions.
+- **IntersectionObserver** — Scroll-triggered reveal animations with directional staggering.
+- **Zero external JS** — All logic (i18n, theme, canvas, orbital animation) in a single `script.js`.
 
 ## Structure
 
 ```
-personal-website-v2/
-├── index.html    # All markup
-├── style.css     # All styling (custom properties, glassmorphism, responsive)
-├── script.js     # All logic (i18n, canvas, animations, theme)
+├── index.html    # Markup
+├── style.css     # Styling
+├── script.js     # Logic
 └── bg.png        # Hero background
 ```
 
 ## Run Locally
 
-Open `index.html` in a browser. No server or build step needed.
-
-For live reload during development:
+Open `index.html` in a browser. For live reload:
 
 ```bash
 npx serve .
 ```
 
-## Customization
-
-- **Translations** — Edit the `translations` object in `script.js`
-- **Theme colors** — Edit CSS custom properties (`:root` / `[data-theme="light"]`) in `style.css`
-- **Projects/Experience** — Edit the corresponding sections directly in `index.html`
-
-## License
+[www.tibosaqira.org](https://www.tibosaqira.org)
 
 © 2026 Bo Ti
