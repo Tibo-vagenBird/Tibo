@@ -424,19 +424,43 @@
                     </div>
                 </a>
 
+                <a href="https://github.com/Elec-291-Group/La-Voiture" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project3_name">La Voiture &mdash; Field Tracking &amp; Remote Controlled Robot</h3>
+                    <p class="project-desc" data-i18n="project3_desc">Three-mode robot car (inductive line-following, joystick teleoperation, autonomous waypoint navigation) with STM32L051 car, EFM8LB12 handheld controller, and PyQt5 PC dashboard. Designed a custom bidirectional IR communication protocol through 5 iterations &mdash; solving TSOP33338 AGC squelch, duty-cycle suppression, optical crosstalk, and half-duplex deadlock &mdash; achieving 27 fps with a stop-and-wait ping-pong protocol, TX FIFO queue, and NOP keep-alive. Built the PyQt5 GUI with real-time 3D attitude visualization and interactive waypoint editor. Designed the full HMI: hierarchical two-level FSM, PS4-style joystick LCD menu navigation, and button-to-IR-command mapping. Built cross-platform CMake/Ninja build toolchain for the team. Led team of 6 with scaffolded task design for mentoring.</p>
+                    <div class="project-tech">
+                        <span>Embedded C</span>
+                        <span>STM32 HAL</span>
+                        <span>Custom IR Protocol</span>
+                        <span>PyQt5</span>
+                        <span>3D Visualization</span>
+                        <span>CMake/Ninja</span>
+                        <span>BLE</span>
+                        <span>IMU</span>
+                        <span>FSM Design</span>
+                        <span>I2C</span>
+                    </div>
+                </a>
+
                 <a href="https://github.com/UBC-Rocket/ulysses-ground-control" class="project-card" target="_blank" rel="noopener">
                     <div class="project-top">
                         <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </div>
                     <h3 class="project-name" data-i18n="project2_name">Ulysses Ground Control Station</h3>
-                    <p class="project-desc" data-i18n="project2_desc">Qt Quick ground control software for UBC Rocket's Ulysses vehicle. Built the C++ backend including the serial interface with the radio modem, alarm receive/processing/display pipeline, and parameter setting logic. Designed and implemented the settings page UI for customizing data display layouts at runtime. The station features a real-time telemetry dashboard with Kalman-filtered orientation, barometric and environmental data, engine control monitoring, a configurable PID controller interface for multiple flight modes, and a radio modem console with single/dual-port modes.</p>
+                    <p class="project-desc" data-i18n="project2_desc">Wrote the full C++ backend for UBC Rocket's Ulysses sounding rocket ground control station built with Qt 6 / QML. Engineered SerialBridge: dual-port serial abstraction with VID/PID-based RFD900x radio auto-detection, independent TX/RX port routing, half-duplex TX pause window with baud-rate-aware timing, and COBS binary packet framing for protobuf-encoded downlink. Built SensorDataModel: decodes nanopb/protobuf telemetry (TelemetryState at 10Hz + SystemStatus at 1Hz) including quaternion-to-Euler conversion for 3D attitude display, position/velocity extraction, and flight-state tracking. Implemented CommandSender with per-channel periodic timers for configurable-rate command uplink and protobuf-encoded FlightCommand serialization (COBS framing). Built AlarmReceiver with regex-based priority classification and automatic RX source selection based on dual-port connection state.</p>
                     <div class="project-tech">
                         <span>C++</span>
                         <span>QML</span>
-                        <span>Qt Quick</span>
+                        <span>Qt 6</span>
                         <span>Serial Communication</span>
-                        <span>Radio Modem</span>
+                        <span>RFD900x Radio</span>
+                        <span>Protobuf/nanopb</span>
+                        <span>COBS Framing</span>
+                        <span>Quaternion Math</span>
                     </div>
                 </a>
 
