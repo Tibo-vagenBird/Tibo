@@ -1586,7 +1586,8 @@ body,
 
     .hero {
         padding-top: calc(var(--nav-height) + 2rem);
-        min-height: auto;
+        min-height: 100vh;
+        min-height: 100svh; /* use small viewport height on mobile to avoid address bar issues */
     }
 
     .hero-name {
