@@ -329,25 +329,9 @@
 
     <!-- HERO -->
     <section id="hero" class="hero">
-        <div class="hero-content-wrapper">
-            <div class="glass-card">
-                <p class="hero-greeting" data-i18n="hero_greeting">Hello, my name is</p>
-                <h1 class="hero-name">Bo Ti<span class="cursor">_</span></h1>
-                <h2 class="hero-title" data-i18n="hero_subtitle">Embedded Software Developer</h2>
-                <p class="hero-bio" data-i18n="hero_bio">2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_work">View My Work</a>
-                    <a href="https://github.com/Tibo-vagenBird" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://www.linkedin.com/in/tibo-bcece71/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
-            </div>
-            <div class="glass-card glass-card-signal">
-                <div class="signal-display">
-                    <canvas id="signalCanvas"></canvas>
-                </div>
-                <div class="signal-label">SYS_READY <span class="blink">●</span></div>
-            </div>
-        </div>
+        <canvas id="asciiHeroCanvas"></canvas>
+        <div class="hero-vignette"></div>
+        <h1 class="hero-name hero-name-sr">Bo Ti</h1>
         <div class="scroll-hint">
             <span data-i18n="scroll_hint">scroll</span>
             <div class="scroll-line"></div>
@@ -369,26 +353,16 @@
                        My Python experience is in scripting and automation tooling, complementing my core work in low-level systems.</p>
                 </div>
                 <div class="about-aside">
-                    <div class="terminal-card">
-                        <div class="terminal-header">
-                            <span class="terminal-dot"></span>
-                            <span class="terminal-dot"></span>
-                            <span class="terminal-dot"></span>
-                            <span class="terminal-title">profile.sh</span>
+                    <div class="profile-dossier">
+                        <span class="profile-label">// profile.jpg</span>
+                        <div class="profile-photo-frame">
+                            <img src="media/profile.jpg" alt="Bo Ti — profile photo" class="profile-photo">
+                            <div class="profile-photo-grain"></div>
                         </div>
-                        <div class="terminal-body">
-                            <code>
-<span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
-<span class="t-output">Bo Ti (倜博)</span>
-<span class="t-prompt">$</span> <span class="t-cmd">cat education.txt</span>
-<span class="t-output">UBC Electrical Engineering</span>
-<span class="t-output">Year 2</span>
-<span class="t-prompt">$</span> <span class="t-cmd">cat focus.txt</span>
-<span class="t-output">Embedded Software</span>
-<span class="t-output">Firmware &amp; Drivers</span>
-<span class="t-output">Real-time Systems</span>
-<span class="t-prompt">$</span> <span class="cursor">_</span>
-                            </code>
+                        <div class="profile-meta">
+                            <span class="profile-meta-item"><span class="profile-meta-key">ID</span> Bo Ti</span>
+                            <span class="profile-meta-item"><span class="profile-meta-key">LOC</span> Vancouver, BC</span>
+                            <span class="profile-meta-item profile-meta-status"><span class="profile-status-dot"></span> ACTIVE</span>
                         </div>
                     </div>
                 </div>
@@ -407,6 +381,11 @@
             <div class="projects-list">
 
                 <a href="https://github.com/Elec-291-Group/Reflow-Oven-Controller" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-img-wrapper">
+                        <img src="media/oven_controller.jpg" alt="8052 Oven Reflow Controller — breadboard prototype with microcontroller" class="project-img" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
                     <div class="project-top">
                         <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -425,6 +404,11 @@
                 </a>
 
                 <a href="https://github.com/Elec-291-Group/La-Voiture" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-img-wrapper">
+                        <img src="media/voiture.jpg" alt="La Voiture — robot car with handheld controller" class="project-img" style="object-position: center 41%" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
                     <div class="project-top">
                         <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -446,6 +430,11 @@
                 </a>
 
                 <a href="https://github.com/UBC-Rocket/ulysses-ground-control" class="project-card" target="_blank" rel="noopener">
+                    <div class="project-img-wrapper">
+                        <img src="media/Ulysses_GCS.png" alt="Ulysses Ground Control Station — Qt 6 telemetry dashboard" class="project-img" style="object-position: center 30%" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
                     <div class="project-top">
                         <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -704,6 +693,425 @@
             }, { threshold: 0.3 });
             observer.observe(skillsSection);
         })();
+    </script>
+
+    <!-- Unified ASCII Hero: building + name — Pretext-accelerated, buffer-cached -->
+    <script type="module">
+    import { prepare, layout } from 'https://esm.sh/@chenglou/pretext';
+
+    (function() {
+        var canvas = document.getElementById('asciiHeroCanvas');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d', { willReadFrequently: true });
+        var dpr = window.devicePixelRatio || 1;
+
+        // --- Config ---
+        var CELL = 5;
+        var RAMP = ' .·:;|=+*?#%@&█';
+        var TEXT = 'Bo Ti';
+        var mouse = { x: -9999, y: -9999, radius: 100, moved: false };
+        var grid = [];
+        var nameIndices = [];   // indices of name cells for fast mouse loop
+        var w = 0, h = 0, cols = 0, rows = 0;
+        var animStart = 0;
+        var SETTLE_DURATION = 2800;
+        var built = false;
+        var settled = false;    // true once animation done — for BG only
+        var staticBuffer = null; // offscreen canvas cache — BG only
+        var staticDirty = true;
+        var lastTheme = null;
+        var needsMouseRedraw = false;
+        var scrollProgress = 0; // 0 = top, 1 = scrolled past hero
+        var nameBaseY = 0;      // original center Y of name in grid coords
+        var nameEntranceStart = 0;  // timestamp when entrance begins
+        var nameEntranceT = 0;      // 0→1 entrance progress
+        var NAME_ENTRANCE_DURATION = 1800; // ms
+        var NAME_ENTRANCE_DELAY = 600;     // wait after settle before sliding in
+
+        var img = new Image();
+        var imgReady = false;
+
+        // Pretext: pre-measure name text for precise positioning
+        var nameMetrics = null;
+
+        function coverFit(iw,ih,cw,ch) {
+            var ir=iw/ih, cr=cw/ch;
+            if(cr>ir){var sh=iw/cr;return{sx:0,sy:(ih-sh)/2,sw:iw,sh:sh};}
+            var sw=ih*cr;return{sx:(iw-sw)/2,sy:0,sw:sw,sh:ih};
+        }
+        function easeOut(t){return 1-Math.pow(1-t,3);}
+        function lerp(a,b,t){return a+(b-a)*t;}
+
+        function build() {
+            var hero = canvas.parentElement;
+            var rect = hero.getBoundingClientRect();
+            w = rect.width; h = rect.height;
+            if (w<1||h<1) return;
+
+            canvas.width = w*dpr; canvas.height = h*dpr;
+            ctx.setTransform(dpr,0,0,dpr,0,0);
+
+            cols = Math.ceil(w/CELL);
+            rows = Math.ceil(h/CELL);
+
+            // --- Use Pretext to measure name text precisely ---
+            var fontSize = Math.min(Math.max(w*0.22,64),260);
+            var fontStr = '700 '+fontSize+'px "Space Mono", monospace';
+            try {
+                var prepared = prepare(TEXT, fontStr);
+                nameMetrics = layout(prepared, w, fontSize * 1.2);
+            } catch(e) {
+                nameMetrics = { height: fontSize * 1.2, lineCount: 1 };
+            }
+
+            // --- Sample image (zoomed to center palace, cropping periphery) ---
+            var imgPixels = null;
+            if (imgReady) {
+                // Crop to center ~55% of image to zoom into the palace
+                var cropX = img.width * 0.195;
+                var cropY = img.height * 0.05;
+                var cropW = img.width * 0.60;
+                var cropH = img.height * 0.75;
+                // Cover-fit the cropped region to canvas
+                var cropRatio = cropW / cropH;
+                var canRatio = w / h;
+                var sx, sy, sw, sh;
+                if (canRatio > cropRatio) {
+                    sw = cropW;
+                    sh = cropW / canRatio;
+                    sx = cropX;
+                    sy = cropY + (cropH - sh) / 2;
+                } else {
+                    sh = cropH;
+                    sw = cropH * canRatio;
+                    sx = cropX + (cropW - sw) / 2;
+                    sy = cropY;
+                }
+                ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+                imgPixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                ctx.clearRect(0, 0, w, h);
+            }
+
+            // --- Text mask at grid resolution ---
+            var textOff = document.createElement('canvas');
+            textOff.width = cols; textOff.height = rows;
+            var tCtx = textOff.getContext('2d');
+            tCtx.fillStyle = '#fff';
+            tCtx.font = '700 '+Math.round(fontSize/CELL)+'px "Space Mono", monospace';
+            tCtx.textBaseline = 'middle';
+            tCtx.textAlign = 'center';
+            // Use Pretext-measured height to vertically center precisely
+            var textY = rows/2;
+            tCtx.fillText(TEXT, cols/2, textY);
+            var textMask = tCtx.getImageData(0,0,cols,rows).data;
+
+            // --- Build unified grid ---
+            grid = new Array(rows*cols);
+            nameIndices = [];
+            for (var row=0; row<rows; row++) {
+                for (var col=0; col<cols; col++) {
+                    var gi = row*cols+col;
+                    var cx = col*CELL+CELL/2;
+                    var cy = row*CELL+CELL/2;
+
+                    // Image sample (3x3 supersampling)
+                    var ir2=0,ig2=0,ib2=0,ia2=0;
+                    if (imgPixels) {
+                        var samps=0;
+                        for(var sy2=-1;sy2<=1;sy2++) {
+                            for(var sx2=-1;sx2<=1;sx2++) {
+                                var spx=Math.floor((cx+sx2*CELL*0.25)*dpr);
+                                var spy=Math.floor((cy+sy2*CELL*0.25)*dpr);
+                                spx=Math.max(0,Math.min(canvas.width-1,spx));
+                                spy=Math.max(0,Math.min(canvas.height-1,spy));
+                                var si=(spy*canvas.width+spx)*4;
+                                ir2+=imgPixels[si];ig2+=imgPixels[si+1];ib2+=imgPixels[si+2];ia2+=imgPixels[si+3];
+                                samps++;
+                            }
+                        }
+                        ir2=Math.round(ir2/samps);ig2=Math.round(ig2/samps);
+                        ib2=Math.round(ib2/samps);ia2=Math.round(ia2/samps);
+                    }
+
+                    var brightness = (0.299*ir2+0.587*ig2+0.114*ib2)*(ia2/255);
+                    var ti = (row*cols+col)*4;
+                    var isName = textMask[ti+3]>100;
+
+                    var charIdx, finalChar;
+                    if (isName) {
+                        var nameBright = Math.max(brightness,120);
+                        charIdx = Math.floor((nameBright/255)*(RAMP.length-1));
+                        charIdx = Math.max(charIdx, Math.floor(RAMP.length*0.65));
+                        finalChar = RAMP[charIdx];
+                    } else {
+                        charIdx = Math.floor((brightness/255)*(RAMP.length-1));
+                        finalChar = RAMP[charIdx];
+                    }
+
+                    var cr2,cg2,cb2;
+                    if (isName) {
+                        if (brightness>30) {
+                            cr2=Math.min(255,Math.round(ir2*1.6));
+                            cg2=Math.min(255,Math.round(ig2*1.6));
+                            cb2=Math.min(255,Math.round(ib2*1.6));
+                        } else {
+                            cr2=220;cg2=235;cb2=255;
+                        }
+                    } else {
+                        var bB=brightness>20?1.4:1.0;
+                        cr2=Math.min(255,Math.round(ir2*bB));
+                        cg2=Math.min(255,Math.round(ig2*bB));
+                        cb2=Math.min(255,Math.round(ib2*bB));
+                    }
+
+                    grid[gi] = {
+                        x:cx, y:cy, char:finalChar,
+                        r:cr2, g:cg2, b:cb2,
+                        brightness:brightness, isName:isName,
+                        delay: isName ? 0 : Math.random()*0.6,
+                        glyph: isName ? finalChar : RAMP[Math.floor(Math.random()*RAMP.length)],
+                        settled: isName ? true : false,  // name cells: no scramble
+                        dx:0, dy:0
+                    };
+
+                    if (isName) nameIndices.push(gi);
+                }
+            }
+
+            // Compute name center Y for scroll offset
+            if (nameIndices.length > 0) {
+                var minY = Infinity, maxY = -Infinity;
+                for (var ni=0;ni<nameIndices.length;ni++) {
+                    var ny = grid[nameIndices[ni]].y;
+                    if (ny<minY) minY=ny;
+                    if (ny>maxY) maxY=ny;
+                }
+                nameBaseY = (minY+maxY)/2;
+            }
+
+            // Create static buffer
+            staticBuffer = document.createElement('canvas');
+            staticBuffer.width = canvas.width;
+            staticBuffer.height = canvas.height;
+
+            settled = false;
+            staticDirty = true;
+            lastTheme = null;
+            nameEntranceStart = 0;
+            nameEntranceT = 0;
+            animStart = performance.now();
+            built = true;
+        }
+
+        // --- Render a cell to a given context ---
+        function renderCell(target, c, displayChar, alpha, drawX, drawY, isLight) {
+            var fr,fg,fb;
+            if (isLight) {
+                if (c.isName) {
+                    fr=Math.round(c.r*0.15);fg=Math.round(c.g*0.15);fb=Math.round(c.b*0.25);
+                    alpha=Math.min(1,alpha*1.2);
+                } else {
+                    fr=Math.round(c.r*0.25);fg=Math.round(c.g*0.25);fb=Math.round(c.b*0.35);
+                    alpha=Math.min(1,alpha*1.6);
+                }
+            } else {
+                fr=c.r; fg=c.g; fb=c.b;
+            }
+            target.fillStyle='rgba('+fr+','+fg+','+fb+','+alpha+')';
+            target.fillText(displayChar,drawX,drawY);
+        }
+
+        // --- Render static buffer (called once after settle) ---
+        function renderStaticBuffer() {
+            var sCtx = staticBuffer.getContext('2d');
+            sCtx.clearRect(0,0,w*dpr,h*dpr);
+            sCtx.setTransform(dpr,0,0,dpr,0,0);
+            var isLight = document.documentElement.getAttribute('data-theme')==='light';
+            var fs = CELL-1;
+
+            // Pass 0: bg cells
+            sCtx.font = '400 '+fs+'px "Space Mono", monospace';
+            sCtx.textAlign='center'; sCtx.textBaseline='middle';
+            for (var i=0;i<grid.length;i++) {
+                var c=grid[i];
+                if (c.isName) continue;
+                if (c.char===' '&&c.brightness<5) continue;
+                var alpha = Math.min(1,(c.brightness/255)*1.5);
+                if (alpha<0.006) continue;
+                renderCell(sCtx,c,c.char,alpha,c.x,c.y,isLight);
+            }
+
+            // Name cells are NOT in static buffer — they're drawn dynamically based on scroll
+
+            lastTheme = document.documentElement.getAttribute('data-theme');
+            staticDirty = false;
+        }
+
+        // --- Main draw loop ---
+        function draw(now) {
+            if (!built) { requestAnimationFrame(draw); return; }
+
+            var elapsed = now - animStart;
+            var globalT = Math.min(1, elapsed / SETTLE_DURATION);
+            var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            var fs = CELL - 1;
+
+            // Check if theme changed
+            if (lastTheme !== null && lastTheme !== (isLight?'light':'dark')) {
+                staticDirty = true;
+            }
+
+            // === SETTLED STATE: cached BG buffer + scroll-driven name ===
+            if (settled) {
+                if (staticDirty) renderStaticBuffer();
+
+                // Blit background
+                ctx.clearRect(0,0,w,h);
+                ctx.setTransform(1,0,0,1,0,0);
+                ctx.drawImage(staticBuffer,0,0);
+                ctx.setTransform(dpr,0,0,dpr,0,0);
+
+                // Entrance animation for name
+                if (nameEntranceStart && nameEntranceT < 1) {
+                    var entranceElapsed = now - nameEntranceStart - NAME_ENTRANCE_DELAY;
+                    if (entranceElapsed > 0) {
+                        nameEntranceT = Math.min(1, entranceElapsed / NAME_ENTRANCE_DURATION);
+                    }
+                    needsMouseRedraw = true; // keep redrawing during entrance
+                }
+
+                // Name resting position: just above the building
+                var restY = -h * 0.15;
+                // Entrance: slide from far above to rest position
+                var entranceEased = 1 - Math.pow(1 - nameEntranceT, 3); // easeOutCubic
+                var entranceOffsetY = -h * 0.4 * (1 - entranceEased) + restY;
+                // Scroll-driven: when scrolling down, name moves down with scroll
+                var scrollOffsetY = scrollProgress * h * 1.1;
+                var nameOffsetY = entranceOffsetY + scrollOffsetY;
+
+                // Alpha: fade in during entrance, fade out when scrolling past
+                var entranceAlpha = nameEntranceT;
+                var scrollAlpha = scrollProgress > 0.85 ? (1 - scrollProgress) / 0.15 : 1;
+                var nameAlpha = Math.max(0, Math.min(1, entranceAlpha * scrollAlpha));
+
+                if (nameAlpha > 0.01) {
+                    ctx.font = '700 '+(fs+1)+'px "Space Mono", monospace';
+                    ctx.textAlign='center'; ctx.textBaseline='middle';
+
+                    for (var j=0;j<nameIndices.length;j++) {
+                        var c = grid[nameIndices[j]];
+
+                        // Mouse physics
+                        var drawY = c.y + nameOffsetY;
+                        var dx=c.x-mouse.x, dy=drawY-mouse.y;
+                        var dist=Math.sqrt(dx*dx+dy*dy);
+                        if (dist<mouse.radius&&dist>0) {
+                            var force=(mouse.radius-dist)/mouse.radius;
+                            force=force*force;
+                            c.dx=lerp(c.dx,(dx/dist)*force*18,0.15);
+                            c.dy=lerp(c.dy,(dy/dist)*force*18,0.15);
+                        } else {
+                            c.dx*=0.88; c.dy*=0.88;
+                        }
+
+                        renderCell(ctx, c, c.char, nameAlpha, c.x+c.dx, drawY+c.dy, isLight);
+                    }
+
+                    // Glow pass
+                    if (nameAlpha > 0.3) {
+                        ctx.shadowColor=isLight?'rgba(14,80,160,0.2)':'rgba(56,189,248,0.25)';
+                        ctx.shadowBlur=10;
+                        for (var k=0;k<nameIndices.length;k++) {
+                            var gc=grid[nameIndices[k]];
+                            var gfr,gfg,gfb;
+                            if(isLight){gfr=10;gfg=50;gfb=120;}
+                            else if(gc.brightness>30){gfr=Math.min(255,gc.r+40);gfg=Math.min(255,gc.g+40);gfb=Math.min(255,gc.b+40);}
+                            else{gfr=180;gfg=220;gfb=255;}
+                            ctx.fillStyle='rgba('+gfr+','+gfg+','+gfb+','+(nameAlpha*0.12)+')';
+                            ctx.fillText(gc.char, gc.x+gc.dx, gc.y+nameOffsetY+gc.dy);
+                        }
+                        ctx.shadowColor='transparent';ctx.shadowBlur=0;
+                    }
+                }
+
+                requestAnimationFrame(draw);
+                return;
+            }
+
+            // === ANIMATING STATE: render everything each frame ===
+            ctx.clearRect(0,0,w,h);
+            ctx.textAlign='center'; ctx.textBaseline='middle';
+
+            var allSettled = true;
+
+            // Pass 0: bg
+            ctx.font='400 '+fs+'px "Space Mono", monospace';
+            for(var i=0;i<grid.length;i++){
+                var c=grid[i];
+                if(c.isName) continue;
+                if(c.char===' '&&c.brightness<5) continue;
+
+                var pT=easeOut(Math.max(0,Math.min(1,(globalT-c.delay*0.35)/0.65)));
+                if(pT<0.92){
+                    if(Math.random()<0.07) c.glyph=RAMP[Math.floor(Math.random()*RAMP.length)];
+                    allSettled=false;
+                } else if(!c.settled){ c.glyph=c.char; c.settled=true; }
+
+                var alpha=Math.min(1,pT*(c.brightness/255)*1.5);
+                if(alpha<0.006) continue;
+                renderCell(ctx,c,c.settled?c.char:c.glyph,alpha,c.x,c.y,isLight);
+            }
+
+            // Pass 1: name — hidden during build animation, will entrance after settle
+
+            // Transition to settled state
+            if (allSettled && globalT >= 1) {
+                settled = true;
+                staticDirty = true;
+                if (!nameEntranceStart) nameEntranceStart = performance.now();
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        // Scroll tracking
+        function updateScroll() {
+            var hero = canvas.parentElement;
+            if (!hero) return;
+            var rect = hero.getBoundingClientRect();
+            // rect.top goes from 0 (at top) to -h (fully scrolled past)
+            // scrollProgress: 0 when top of page, 1 when hero scrolled out
+            scrollProgress = Math.max(0, Math.min(1, -rect.top / rect.height));
+            needsMouseRedraw = true;
+        }
+        window.addEventListener('scroll', updateScroll, { passive: true });
+        updateScroll();
+
+        canvas.addEventListener('mousemove',function(e){
+            var rect=canvas.getBoundingClientRect();
+            mouse.x=e.clientX-rect.left; mouse.y=e.clientY-rect.top;
+            needsMouseRedraw=true;
+        });
+        canvas.addEventListener('mouseleave',function(){
+            mouse.x=-9999;mouse.y=-9999;
+            needsMouseRedraw=true;
+        });
+
+        img.onload=function(){imgReady=true;build();requestAnimationFrame(draw);};
+        img.src='media/bg.png';
+
+        window.addEventListener('load',function(){
+            if(img.complete&&!built){imgReady=true;build();requestAnimationFrame(draw);}
+        });
+        window.addEventListener('resize',function(){
+            if(img.complete){imgReady=true;settled=false;build();}
+        });
+
+        // Expose for theme toggle
+        window.redrawGrid = function(){
+            if(img.complete){imgReady=true;settled=false;build();requestAnimationFrame(draw);}
+        };
+    })();
     </script>
 </body>
 </html>
