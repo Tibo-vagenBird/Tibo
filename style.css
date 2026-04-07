@@ -14,23 +14,23 @@
 }
 
 :root {
-    --bg-deep: #0a0e17;
-    --bg-surface: #0f1520;
-    --bg-card: #141c2b;
-    --bg-elevated: #1a2435;
+    --bg-deep: #10141f;
+    --bg-surface: #161c2a;
+    --bg-card: #1c2536;
+    --bg-elevated: #232e42;
 
     --accent: #38bdf8;
-    --accent-dim: rgba(56, 189, 248, 0.12);
+    --accent-dim: rgba(56, 189, 248, 0.14);
     --accent-hover: #7dd3fc;
     --accent-secondary: #f0a030;
-    --accent-secondary-dim: rgba(240, 160, 48, 0.12);
+    --accent-secondary-dim: rgba(240, 160, 48, 0.14);
 
-    --text-primary: #e4e8ef;
-    --text-secondary: #7b8ba3;
-    --text-muted: #4a5568;
+    --text-primary: #eaecf2;
+    --text-secondary: #8d9bb2;
+    --text-muted: #5a6a80;
 
-    --border: #1e2a3a;
-    --border-light: rgba(255, 255, 255, 0.06);
+    --border: #283548;
+    --border-light: rgba(255, 255, 255, 0.08);
 
     --font-display: 'Space Mono', 'Courier New', monospace;
     --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1103,52 +1103,6 @@ body::after {
     margin-bottom: 0;
 }
 
-.project-desc-wrap {
-    margin-bottom: 1.25rem;
-}
-
-.project-detail {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.78;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-    margin-top: 0;
-}
-
-.project-desc-wrap.expanded .project-detail {
-    max-height: 500px;
-    opacity: 1;
-    margin-top: 0.5rem;
-}
-
-.project-readmore {
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    cursor: pointer;
-    padding: 0.35rem 0;
-    letter-spacing: 0.04em;
-    transition: color 0.2s;
-    display: inline-block;
-    margin-top: 0.4rem;
-}
-
-.project-readmore:hover {
-    color: var(--accent-hover);
-}
-
-.project-desc-wrap.expanded .project-readmore span {
-    display: none;
-}
-
-.project-desc-wrap.expanded .project-readmore::after {
-    content: attr(data-collapse);
-}
 
 .project-tech {
     display: flex;

@@ -380,7 +380,7 @@
             </div>
             <div class="projects-list">
 
-                <a href="https://github.com/Elec-291-Group/Reflow-Oven-Controller" class="project-card" target="_blank" rel="noopener">
+                <a href="project-oven.html" class="project-card">
                     <div class="project-img-wrapper">
                         <img src="media/oven_controller.jpg" alt="8052 Oven Reflow Controller — breadboard prototype with microcontroller" class="project-img" loading="lazy">
                         <div class="project-img-fade"></div>
@@ -391,11 +391,7 @@
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </div>
                     <h3 class="project-name" data-i18n="project1_name">8052 Oven Reflow Controller</h3>
-                    <div class="project-desc-wrap">
-                        <p class="project-desc" data-i18n="project1_summary">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow.</p>
-                        <div class="project-detail" data-i18n="project1_detail">Mid-project, I reviewed and rewrote 2,500+ lines of code to enforce the pub-sub pattern as new features were merged. The system drives an SSR via soft-PWM with proportional control, supports dual interaction through a 4x4 keypad/LCD hardware interface and a UART-based PC GUI (57600 baud), and includes thermocouple fault detection with emergency shutdown.</div>
-                        <button class="project-readmore" data-collapse="Show less" onclick="event.preventDefault();event.stopPropagation();this.parentElement.classList.toggle('expanded')"><span data-i18n="read_more">Read more</span></button>
-                    </div>
+                    <p class="project-desc" data-i18n="project1_summary">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow.</p>
                     <div class="project-tech">
                         <span>8052 Assembly</span>
                         <span>Cooperative Multitasking</span>
@@ -407,7 +403,7 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/Elec-291-Group/La-Voiture" class="project-card" target="_blank" rel="noopener">
+                <a href="project-voiture.html" class="project-card">
                     <div class="project-img-wrapper">
                         <img src="media/voiture.jpg" alt="La Voiture — robot car with handheld controller" class="project-img" style="object-position: center 41%" loading="lazy">
                         <div class="project-img-fade"></div>
@@ -418,11 +414,7 @@
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </div>
                     <h3 class="project-name" data-i18n="project3_name">La Voiture &mdash; Field Tracking &amp; Remote Controlled Robot</h3>
-                    <div class="project-desc-wrap">
-                        <p class="project-desc" data-i18n="project3_summary">Three-mode robot car (line-following, joystick teleoperation, autonomous waypoint navigation) with STM32L051 car, EFM8LB12 handheld controller, and PyQt5 PC dashboard. Designed a custom bidirectional IR protocol through 5 iterations, achieving 27 fps throughput. Led team of 6.</p>
-                        <div class="project-detail" data-i18n="project3_detail">Solved TSOP33338 AGC squelch, duty-cycle suppression, optical crosstalk, and half-duplex deadlock with a stop-and-wait ping-pong protocol, TX FIFO queue, and NOP keep-alive. Built the PyQt5 GUI with real-time 3D attitude visualization and interactive waypoint editor. Designed the full HMI: hierarchical two-level FSM, PS4-style joystick LCD menu navigation, and button-to-IR-command mapping. Built cross-platform CMake/Ninja build toolchain for the team.</div>
-                        <button class="project-readmore" data-collapse="Show less" onclick="event.preventDefault();event.stopPropagation();this.parentElement.classList.toggle('expanded')"><span data-i18n="read_more">Read more</span></button>
-                    </div>
+                    <p class="project-desc" data-i18n="project3_summary">Three-mode robot car (line-following, joystick teleoperation, autonomous waypoint navigation) with STM32L051 car, EFM8LB12 handheld controller, and PyQt5 PC dashboard. Designed a custom bidirectional IR protocol through 5 iterations, achieving 27 fps throughput. Led team of 6.</p>
                     <div class="project-tech">
                         <span>Embedded C</span>
                         <span>STM32 HAL</span>
@@ -437,7 +429,7 @@
                     </div>
                 </a>
 
-                <a href="https://github.com/UBC-Rocket/ulysses-ground-control" class="project-card" target="_blank" rel="noopener">
+                <a href="project-ulysses.html" class="project-card">
                     <div class="project-img-wrapper">
                         <img src="media/Ulysses_GCS.png" alt="Ulysses Ground Control Station — Qt 6 telemetry dashboard" class="project-img" style="object-position: center 30%" loading="lazy">
                         <div class="project-img-fade"></div>
@@ -448,11 +440,7 @@
                         <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
                     </div>
                     <h3 class="project-name" data-i18n="project2_name">Ulysses Ground Control Station</h3>
-                    <div class="project-desc-wrap">
-                        <p class="project-desc" data-i18n="project2_summary">Wrote the full C++ backend for UBC Rocket's Ulysses sounding rocket ground control station (Qt 6 / QML). Engineered SerialBridge for dual-port RFD900x radio communication with COBS framing and protobuf telemetry decoding at 10Hz.</p>
-                        <div class="project-detail" data-i18n="project2_detail">SerialBridge features VID/PID-based radio auto-detection, independent TX/RX port routing, half-duplex TX pause window with baud-rate-aware timing. Built SensorDataModel: decodes nanopb/protobuf telemetry (TelemetryState at 10Hz + SystemStatus at 1Hz) including quaternion-to-Euler conversion for 3D attitude display, position/velocity extraction, and flight-state tracking. Implemented CommandSender with per-channel periodic timers for configurable-rate command uplink. Built AlarmReceiver with regex-based priority classification and automatic RX source selection based on dual-port connection state.</div>
-                        <button class="project-readmore" data-collapse="Show less" onclick="event.preventDefault();event.stopPropagation();this.parentElement.classList.toggle('expanded')"><span data-i18n="read_more">Read more</span></button>
-                    </div>
+                    <p class="project-desc" data-i18n="project2_summary">Wrote the full C++ backend for UBC Rocket's Ulysses sounding rocket ground control station (Qt 6 / QML). Engineered SerialBridge for dual-port RFD900x radio communication with COBS framing and protobuf telemetry decoding at 10Hz.</p>
                     <div class="project-tech">
                         <span>C++</span>
                         <span>QML</span>
