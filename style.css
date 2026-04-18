@@ -1822,3 +1822,8 @@ body,
         display: none;
     }
 }
+
+.lang-toggle .lang-label {
+    font-family: var(--font-display);
+}
+

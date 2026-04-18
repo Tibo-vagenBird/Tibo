@@ -6,11 +6,11 @@
     <title>Bo Ti - Embedded Software Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
     <script>
         (function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4">
     <style>
         /* ---- TRACKS ORBITAL ANIMATION ---- */
         .tracks-wrapper {
@@ -453,6 +453,26 @@
                     </div>
                 </a>
 
+                <a href="project-solidworks.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="media/sw_mouse.png" alt="SolidWorks mouse model — advanced surfacing" class="project-img" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_project">Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project4_name">SolidWorks CAD Modeling</h3>
+                    <p class="project-desc" data-i18n="project4_summary">Two self-directed modeling projects — a PC tower case (sheet metal) and a wireless mouse (advanced surfacing) — to build proficiency in SolidWorks across different CAD disciplines.</p>
+                    <div class="project-tech">
+                        <span>SolidWorks</span>
+                        <span>Sheet Metal</span>
+                        <span>Advanced Surfacing</span>
+                        <span>3D Sketch</span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -548,7 +568,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="mn-translations.js"></script>
+    <script src="script.js?v=4"></script>
     <script>
         /* ---- SKILLS ORBITAL ANIMATION ---- */
         (function () {
@@ -556,13 +577,13 @@
             var R = 290;
             var A = 2 * Math.PI / 7;
             var tracks = [
-                { name: "Languages",  nameZh: "\u7f16\u7a0b\u8bed\u8a00", color: "#6eb4ff", glow: "rgba(110,180,255,0.3)",  planetHi: "rgba(100,200,255,0.5)", planetMid: "rgba(50,140,210,0.3)", planetLo: "rgba(20,80,140,0.2)", radius: R, startAngle: A * 0, speed: S, items: ["8052 Assembly", "C/C++", "QML", "Python"], itemsZh: ["8052 \u6c47\u7f16", "C/C++", "QML", "Python"] },
-                { name: "Embedded",   nameZh: "\u5d4c\u5165\u5f0f",   color: "#5dffb0", glow: "rgba(93,255,176,0.3)",   planetHi: "rgba(90,230,180,0.5)", planetMid: "rgba(30,160,130,0.3)", planetLo: "rgba(15,90,80,0.2)", radius: R, startAngle: A * 1, speed: S, items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"], itemsZh: ["\u72b6\u6001\u673a\u8bbe\u8ba1", "PWM \u63a7\u5236", "UART/\u4e32\u53e3\u901a\u4fe1", "\u53d1\u5e03-\u8ba2\u9605\u67b6\u6784", "\u534f\u4f5c\u5f0f\u591a\u4efb\u52a1", "\u5b9a\u65f6\u5668/\u4e2d\u65ad\u914d\u7f6e"] },
-                { name: "Frameworks", nameZh: "\u6846\u67b6\u4e0e\u5e93", color: "#ff9d5c", glow: "rgba(255,157,92,0.3)",    planetHi: "rgba(255,175,100,0.48)", planetMid: "rgba(200,110,55,0.28)", planetLo: "rgba(120,60,25,0.18)", radius: R, startAngle: A * 2, speed: S, items: ["Qt Quick"], itemsZh: ["Qt Quick"] },
-                { name: "Scripting",  nameZh: "\u811a\u672c\u4e0e\u81ea\u52a8\u5316", color: "#ffe066", glow: "rgba(255,224,102,0.3)",   planetHi: "rgba(255,235,110,0.48)", planetMid: "rgba(200,180,70,0.28)", planetLo: "rgba(120,100,30,0.18)", radius: R, startAngle: A * 3, speed: S, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"], itemsZh: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
-                { name: "Dev Tools",  nameZh: "\u8f6f\u4ef6\u4e0e\u5de5\u5177", color: "#d67eff", glow: "rgba(214,126,255,0.3)",   planetHi: "rgba(200,150,255,0.48)", planetMid: "rgba(140,80,220,0.28)", planetLo: "rgba(70,35,140,0.18)", radius: R, startAngle: A * 4, speed: S, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"], itemsZh: ["Quartus", "Qt Creator", "VS Code", "Git", "Office \u5957\u4ef6"] },
-                { name: "CAD",        nameZh: "CAD / \u8bbe\u8ba1",   color: "#ff6b6b", glow: "rgba(255,107,107,0.3)",   planetHi: "rgba(255,120,120,0.48)", planetMid: "rgba(200,70,70,0.28)", planetLo: "rgba(120,35,35,0.18)", radius: R, startAngle: A * 5, speed: S, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"], itemsZh: ["SolidWorks", "\u9ad8\u7ea7\u66f2\u9762", "\u9499\u91d1", "\u88c5\u914d\u4f53"] },
-                { name: "Lab Gear",   nameZh: "\u5b9e\u9a8c\u5ba4\u8bbe\u5907", color: "#38bdf8", glow: "rgba(56,189,248,0.3)",    planetHi: "rgba(85,225,255,0.5)", planetMid: "rgba(30,160,210,0.3)", planetLo: "rgba(15,90,120,0.2)", radius: R, startAngle: A * 6, speed: S, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"], itemsZh: ["\u903b\u8f91\u5206\u6790\u4eea", "\u4e07\u7528\u8868", "\u793a\u6ce2\u5668", "\u4fe1\u53f7\u53d1\u751f\u5668"] }
+                { name: "Languages",  nameZh: "\u7f16\u7a0b\u8bed\u8a00", nameMn: "ᠫᠷᠣᠭ᠋ᠷᠠᠮ ᠬᠡᠯᠡ", color: "#6eb4ff", glow: "rgba(110,180,255,0.3)",  planetHi: "rgba(100,200,255,0.5)", planetMid: "rgba(50,140,210,0.3)", planetLo: "rgba(20,80,140,0.2)", radius: R, startAngle: A * 0, speed: S, items: ["8052 Assembly", "C/C++", "QML", "Python"], itemsZh: ["8052 \u6c47\u7f16", "C/C++", "QML", "Python"], itemsMn: ["8052 Assembly", "C/C++", "QML", "Python"] },
+                { name: "Embedded",   nameZh: "\u5d4c\u5165\u5f0f",   nameMn: "ᠳᠠᠷᠠᠭᠠᠯᠠᠯ", color: "#5dffb0", glow: "rgba(93,255,176,0.3)",   planetHi: "rgba(90,230,180,0.5)", planetMid: "rgba(30,160,130,0.3)", planetLo: "rgba(15,90,80,0.2)", radius: R, startAngle: A * 1, speed: S, items: ["FSM Design", "PWM Control", "UART/Serial", "Pub-Sub Architecture", "Cooperative Multitasking", "Timer/Interrupt Config"], itemsZh: ["\u72b6\u6001\u673a\u8bbe\u8ba1", "PWM \u63a7\u5236", "UART/\u4e32\u53e3\u901a\u4fe1", "\u53d1\u5e03-\u8ba2\u9605\u67b6\u6784", "\u534f\u4f5c\u5f0f\u591a\u4efb\u52a1", "\u5b9a\u65f6\u5668/\u4e2d\u65ad\u914d\u7f6e"], itemsMn: ["FSM ᠪᠦᠲᠦᠴᠡ", "PWM ᠬᠢᠨᠠᠯᠲᠠ", "UART/ᠴᠤᠪᠤᠷᠠᠯ", "Pub-Sub", "ᠬᠠᠮᠲᠤ ᠠᠵᠢᠯᠯᠠᠭ᠎ᠠ", "ᠴᠠᠭ ᠤᠨ ᠵᠣᠬᠢᠴᠠᠭᠤᠯᠤᠯ"] },
+                { name: "Frameworks", nameZh: "\u6846\u67b6\u4e0e\u5e93", nameMn: "ᠬᠠᠭᠤᠳᠠᠰᠤ", color: "#ff9d5c", glow: "rgba(255,157,92,0.3)",    planetHi: "rgba(255,175,100,0.48)", planetMid: "rgba(200,110,55,0.28)", planetLo: "rgba(120,60,25,0.18)", radius: R, startAngle: A * 2, speed: S, items: ["Qt Quick"], itemsZh: ["Qt Quick"], itemsMn: ["Qt Quick"] },
+                { name: "Scripting",  nameZh: "\u811a\u672c\u4e0e\u81ea\u52a8\u5316", nameMn: "ᠠᠦ᠋ᠲ᠋ᠣᠮᠠᠲ᠋ᠵᠢᠯ", color: "#ffe066", glow: "rgba(255,224,102,0.3)",   planetHi: "rgba(255,235,110,0.48)", planetMid: "rgba(200,180,70,0.28)", planetLo: "rgba(120,100,30,0.18)", radius: R, startAngle: A * 3, speed: S, items: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"], itemsZh: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"], itemsMn: ["Selenium", "BeautifulSoup", "OpenCV", "NumPy", "Pandas", "Matplotlib"] },
+                { name: "Dev Tools",  nameZh: "\u8f6f\u4ef6\u4e0e\u5de5\u5177", nameMn: "ᠬᠡᠷᠡᠭᠰᠡᠯ", color: "#d67eff", glow: "rgba(214,126,255,0.3)",   planetHi: "rgba(200,150,255,0.48)", planetMid: "rgba(140,80,220,0.28)", planetLo: "rgba(70,35,140,0.18)", radius: R, startAngle: A * 4, speed: S, items: ["Quartus", "Qt Creator", "VS Code", "Git", "Office Suite"], itemsZh: ["Quartus", "Qt Creator", "VS Code", "Git", "Office \u5957\u4ef6"], itemsMn: ["Quartus", "Qt Creator", "VS Code", "Git", "Office"] },
+                { name: "CAD",        nameZh: "CAD / \u8bbe\u8ba1",   nameMn: "ᠵᠢᠷᠤᠭᠯᠠᠯ", color: "#ff6b6b", glow: "rgba(255,107,107,0.3)",   planetHi: "rgba(255,120,120,0.48)", planetMid: "rgba(200,70,70,0.28)", planetLo: "rgba(120,35,35,0.18)", radius: R, startAngle: A * 5, speed: S, items: ["SolidWorks", "Advanced Surfacing", "Sheet Metal", "Assembly"], itemsZh: ["SolidWorks", "\u9ad8\u7ea7\u66f2\u9762", "\u9499\u91d1", "\u88c5\u914d\u4f53"], itemsMn: ["SolidWorks", "ᠳᠡᠭᠡᠳᠦ ᠭᠠᠳᠠᠷᠭᠤ", "ᠬᠠᠪᠲᠠᠰᠤ ᠮᠧᠲ᠋ᠠᠯ", "ᠡᠪᠯᠡᠯ"] },
+                { name: "Lab Gear",   nameZh: "\u5b9e\u9a8c\u5ba4\u8bbe\u5907", nameMn: "ᠲᠤᠷᠰᠢᠯᠭ᠎ᠠ ᠶᠢᠨ ᠬᠡᠷᠡᠭᠰᠡᠯ", color: "#38bdf8", glow: "rgba(56,189,248,0.3)",    planetHi: "rgba(85,225,255,0.5)", planetMid: "rgba(30,160,210,0.3)", planetLo: "rgba(15,90,120,0.2)", radius: R, startAngle: A * 6, speed: S, items: ["Logic Analyzer", "Multimeter", "Oscilloscope", "Signal Generator"], itemsZh: ["\u903b\u8f91\u5206\u6790\u4eea", "\u4e07\u7528\u8868", "\u793a\u6ce2\u5668", "\u4fe1\u53f7\u53d1\u751f\u5668"], itemsMn: ["ᠯᠣᠭᠢᠺ ᠰᠢᠨᠵᠢᠯᠡᠭᠴᠢ", "ᠮᠧᠲ᠋ᠷ", "ᠣᠰᠼᠢᠯᠣᠰᠺᠣᠫ", "ᠳᠣᠬᠢᠶ᠎ᠠ ᠦᠢᠯᠡᠳᠦᠭᠴᠢ"] }
             ];
 
             var scene   = document.getElementById('tracksScene');
@@ -572,10 +593,14 @@
             if (!scene) return;
 
             function getTrackName(t) {
-                return currentLang === 'zh' && t.nameZh ? t.nameZh : t.name;
+                if (currentLang === 'zh' && t.nameZh) return t.nameZh;
+                if (currentLang === 'mn' && t.nameMn) return t.nameMn;
+                return t.name;
             }
             function getTrackItems(t) {
-                return currentLang === 'zh' && t.itemsZh ? t.itemsZh : t.items;
+                if (currentLang === 'zh' && t.itemsZh) return t.itemsZh;
+                if (currentLang === 'mn' && t.itemsMn) return t.itemsMn;
+                return t.items;
             }
 
             var elements = tracks.map(function (t) {
@@ -723,8 +748,8 @@
                     var card = document.createElement('div');
                     card.className = 'skill-glass-card';
                     card.style.setProperty('--skill-color', t.color);
-                    var name = currentLang === 'zh' && t.nameZh ? t.nameZh : t.name;
-                    var items = currentLang === 'zh' && t.itemsZh ? t.itemsZh : t.items;
+                    var name = getTrackName(t);
+                    var items = getTrackItems(t);
                     card.innerHTML = '<h4 class="skill-glass-title">' + name + '</h4>' +
                         '<div class="skill-glass-items">' + items.map(function(item) {
                             return '<span>' + item + '</span>';
@@ -740,8 +765,8 @@
                     var cards = mobileGrid.querySelectorAll('.skill-glass-card');
                     cards.forEach(function(card, i) {
                         var t = tracks[i];
-                        var name = currentLang === 'zh' && t.nameZh ? t.nameZh : t.name;
-                        var items = currentLang === 'zh' && t.itemsZh ? t.itemsZh : t.items;
+                        var name = getTrackName(t);
+                        var items = getTrackItems(t);
                         card.querySelector('.skill-glass-title').textContent = name;
                         card.querySelector('.skill-glass-items').innerHTML = items.map(function(item) {
                             return '<span>' + item + '</span>';

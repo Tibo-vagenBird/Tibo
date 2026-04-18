@@ -432,6 +432,57 @@
     opacity: 0.7;
 }
 
+/* ── Side-by-side figures ── */
+.proj-figure-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 2rem 0;
+}
+
+.proj-figure-row .proj-figure {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .proj-figure-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Sub-headings (h3) ── */
+.proj-subheading {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 2rem 0 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+/* ── Bullet list ── */
+.proj-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+.proj-list li {
+    position: relative;
+    padding-left: 1.4em;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.proj-list li::before {
+    content: '\25B8';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.85em;
+}
+
 /* ── Comparison cards ── */
 .proj-comparison {
     display: flex;
@@ -649,7 +700,7 @@
         transparent 100%
     );
     opacity: 0.4;
-    margin: 0;
+    margin: 1rem 0 2.5rem;
 }
 
 /* ── Responsive ── */
@@ -715,4 +766,65 @@
     .proj-result-number {
         font-size: 1.35rem;
     }
+}
+
+/* ==========================================================
+   MONGOLIAN MODE — Project page panels
+   Body is vertical-lr (from style.css), project hero and
+   content become side-by-side horizontal-tb panels.
+   ========================================================== */
+
+/* Hero panel */
+html[lang="mn"] .project-hero {
+    writing-mode: horizontal-tb;
+    width: 45vw;
+    min-width: 360px;
+    height: auto;
+    min-height: 100vh;
+    max-height: none;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Layout: horizontal-tb so content flows normally inside */
+html[lang="mn"] .project-layout {
+    writing-mode: horizontal-tb;
+    flex-shrink: 0;
+    max-width: none;
+    width: auto;
+    min-height: 100vh;
+}
+
+html[lang="mn"] .project-content {
+    writing-mode: horizontal-tb;
+    max-width: none;
+    width: var(--mn-panel-w, min(900px, 85vw));
+    min-height: 100vh;
+    padding: 2.5rem;
+    flex-shrink: 0;
+}
+
+/* TOC: hide in MN mode (panels don't benefit from sticky TOC) */
+html[lang="mn"] .proj-toc {
+    display: none;
+}
+
+/* Meta bar: stays horizontal grid */
+html[lang="mn"] .proj-meta {
+    writing-mode: horizontal-tb;
+}
+
+/* Comparison, hw grid, results: stay horizontal */
+html[lang="mn"] .proj-comparison,
+html[lang="mn"] .proj-hw-grid,
+html[lang="mn"] .proj-results-grid,
+html[lang="mn"] .proj-tags {
+    writing-mode: horizontal-tb;
+}
+
+/* Figures: horizontal */
+html[lang="mn"] .proj-figure {
+    writing-mode: horizontal-tb;
 }
