@@ -10,7 +10,9 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import (
     ElementClickInterceptedException,
     NoSuchElementException,
+    StaleElementReferenceException,
     TimeoutException,
+    WebDriverException,
 )
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -119,24 +121,35 @@ def _click_expanders(driver, team_name: str):
     return button_hrefs, overlay_texts, orbit_texts
 
 
+def _safe_text(el) -> str:
+    try:
+        return (el.text or "").strip()
+    except (StaleElementReferenceException, NoSuchElementException, WebDriverException):
+        return ""
+
+
+def _safe_attr(el, name: str) -> str:
+    try:
+        return el.get_attribute(name) or ""
+    except (StaleElementReferenceException, NoSuchElementException, WebDriverException):
+        return ""
+
+
 def _extract_visible_text(driver) -> tuple[str, list[str]]:
     body = driver.find_element(By.TAG_NAME, "body")
-    full = body.text
+    full = _safe_text(body)
 
     href_list: list[str] = []
     for a in body.find_elements(By.TAG_NAME, "a"):
-        href = a.get_attribute("href")
-        try:
-            label = a.text.strip()
-        except NoSuchElementException:
-            label = ""
+        href = _safe_attr(a, "href")
+        label = _safe_text(a)
         href_list.append(f"{label}: {href}")
 
     header_text = " ".join(
-        h.text for h in body.find_elements(By.TAG_NAME, "header") if h.text
+        t for t in (_safe_text(h) for h in body.find_elements(By.TAG_NAME, "header")) if t
     )
     footer_text = " ".join(
-        f.text for f in body.find_elements(By.TAG_NAME, "footer") if f.text
+        t for t in (_safe_text(f) for f in body.find_elements(By.TAG_NAME, "footer")) if t
     )
 
     visible = full
@@ -166,14 +179,20 @@ def selenium():
                     WebDriverWait(driver, 15).until(
                         EC.presence_of_all_elements_located((By.TAG_NAME, "body"))
                     )
-                except (TimeoutException, Exception) as exc:
+                except Exception as exc:
                     print(f"[stage4:selenium]   load failed: {exc}")
+                    f.write(f"=== {name} ===\n(load failed: {exc})\n------------\n\n")
                     continue
 
-                button_hrefs, overlay_texts, orbit_texts = _click_expanders(
-                    driver, name
-                )
-                visible, hrefs = _extract_visible_text(driver)
+                try:
+                    button_hrefs, overlay_texts, orbit_texts = _click_expanders(
+                        driver, name
+                    )
+                    visible, hrefs = _extract_visible_text(driver)
+                except Exception as exc:
+                    print(f"[stage4:selenium]   extract failed: {exc}")
+                    f.write(f"=== {name} ===\n(extract failed: {exc})\n------------\n\n")
+                    continue
 
                 f.write(f"=== {name} ===\n")
                 f.write(visible + "\n")
