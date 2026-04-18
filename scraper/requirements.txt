@@ -1,0 +1,8 @@
+anthropic>=0.40
+beautifulsoup4
+lxml
+pandas
+requests
+httpx
+selenium>=4.15
+spacy

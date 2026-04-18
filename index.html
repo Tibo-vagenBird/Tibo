@@ -380,29 +380,6 @@
             </div>
             <div class="projects-list">
 
-                <a href="project-oven.html" class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="media/oven_controller.jpg" alt="8052 Oven Reflow Controller — breadboard prototype with microcontroller" class="project-img" loading="lazy">
-                        <div class="project-img-fade"></div>
-                        <div class="project-img-scanline"></div>
-                    </div>
-                    <div class="project-top">
-                        <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
-                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                    </div>
-                    <h3 class="project-name" data-i18n="project1_name">8052 Oven Reflow Controller</h3>
-                    <p class="project-desc" data-i18n="project1_summary">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow.</p>
-                    <div class="project-tech">
-                        <span>8052 Assembly</span>
-                        <span>Cooperative Multitasking</span>
-                        <span>Pub-Sub Architecture</span>
-                        <span>FSM Design</span>
-                        <span>SSR PWM Control</span>
-                        <span>UART</span>
-                        <span>DE10-Lite FPGA</span>
-                    </div>
-                </a>
-
                 <a href="project-voiture.html" class="project-card">
                     <div class="project-img-wrapper">
                         <img src="media/voiture.jpg" alt="La Voiture — robot car with handheld controller" class="project-img" style="object-position: center 41%" loading="lazy">
@@ -429,6 +406,29 @@
                     </div>
                 </a>
 
+                <a href="project-oven.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="media/oven_controller.jpg" alt="8052 Oven Reflow Controller — breadboard prototype with microcontroller" class="project-img" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_featured">Featured Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project1_name">8052 Oven Reflow Controller</h3>
+                    <p class="project-desc" data-i18n="project1_summary">A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow.</p>
+                    <div class="project-tech">
+                        <span>8052 Assembly</span>
+                        <span>Cooperative Multitasking</span>
+                        <span>Pub-Sub Architecture</span>
+                        <span>FSM Design</span>
+                        <span>SSR PWM Control</span>
+                        <span>UART</span>
+                        <span>DE10-Lite FPGA</span>
+                    </div>
+                </a>
+
                 <a href="project-ulysses.html" class="project-card">
                     <div class="project-img-wrapper">
                         <img src="media/Ulysses_GCS.png" alt="Ulysses Ground Control Station — Qt 6 telemetry dashboard" class="project-img" style="object-position: center 30%" loading="lazy">
@@ -450,6 +450,49 @@
                         <span>Protobuf/nanopb</span>
                         <span>COBS Framing</span>
                         <span>Quaternion Math</span>
+                    </div>
+                </a>
+
+                <a href="project-teams.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="media/voiture.jpg" alt="UBC Design Teams Recruitment Tracker" class="project-img" loading="lazy" style="filter: hue-rotate(140deg) saturate(0.6);">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
+                    <div class="project-top">
+                        <span class="project-label">Live Tool</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name">UBC Design Teams &mdash; Recruitment Tracker</h3>
+                    <p class="project-desc">Auto-refreshing status tracker for 33 UBC Engineering design teams. A GitHub Actions cron job scrapes every recruitment page weekly during Aug 15 &ndash; Sep 15, then Claude (Haiku) summarizes status, roles, and application links into structured JSON that this page renders.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>spaCy NER</span>
+                        <span>Anthropic API</span>
+                        <span>GitHub Actions</span>
+                        <span>Scheduled ETL</span>
+                    </div>
+                </a>
+
+                <a href="project-lightcycle.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="media/cpen211_lab6_cover.png" alt="Light Cycle game on RISC-V — title screen" class="project-img" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
+                    <div class="project-top">
+                        <span class="project-label" data-i18n="project_label_project">Project</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name" data-i18n="project5_name">Line's War &mdash; Light Cycle Game on RISC-V</h3>
+                    <p class="project-desc" data-i18n="project5_summary">A Tron-style two-player Light Cycle game written in bare-metal C, running on a Nios V (RISC-V) soft-core processor on the Intel DE1-SoC FPGA. Drives VGA frame buffer, keys, and HEX displays directly through memory-mapped I/O.</p>
+                    <div class="project-tech">
+                        <span>RISC-V (RV32I)</span>
+                        <span>Nios V</span>
+                        <span>Bare-metal C</span>
+                        <span>DE1-SoC FPGA</span>
+                        <span>VGA Frame Buffer</span>
                     </div>
                 </a>
 

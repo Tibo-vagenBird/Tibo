@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBC Design Teams Recruitment Tracker — Bo Ti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+    <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+    <style>
+        .teams-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--color-text-muted, #8892b0);
+        }
+        .teams-meta .kv { display: inline-flex; gap: 0.5rem; }
+        .teams-meta .kv b { color: var(--color-accent, #f0a030); font-weight: 700; }
+
+        .teams-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .teams-filter {
+            padding: 0.4rem 0.9rem;
+            border: 1px solid rgba(240,160,48,0.25);
+            border-radius: 999px;
+            background: transparent;
+            color: var(--color-text, #ccd6f6);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .teams-filter:hover { border-color: rgba(240,160,48,0.6); }
+        .teams-filter.active {
+            background: rgba(240,160,48,0.15);
+            border-color: rgba(240,160,48,0.8);
+            color: var(--color-accent, #f0a030);
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .team-card {
+            border: 1px solid rgba(136,146,176,0.18);
+            border-radius: 10px;
+            padding: 1.25rem 1.4rem;
+            background: rgba(17,25,40,0.35);
+            transition: border-color 0.2s ease, transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .team-card:hover {
+            border-color: rgba(240,160,48,0.45);
+            transform: translateY(-2px);
+        }
+
+        .team-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .team-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-text-strong, #e6f1ff);
+            margin: 0;
+        }
+
+        .team-status {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .team-status.open    { background: rgba(72,207,173,0.12); color: #48cfad; border: 1px solid rgba(72,207,173,0.4); }
+        .team-status.closed  { background: rgba(230,90,90,0.10);  color: #e65a5a; border: 1px solid rgba(230,90,90,0.3); }
+        .team-status.unknown { background: rgba(136,146,176,0.10); color: #8892b0; border: 1px solid rgba(136,146,176,0.25); }
+
+        .team-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+        .team-type-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.68rem;
+            padding: 0.12rem 0.5rem;
+            border-radius: 3px;
+            background: rgba(56,189,248,0.08);
+            color: #7dd3fc;
+            border: 1px solid rgba(56,189,248,0.2);
+        }
+
+        .team-summary {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: var(--color-text, #ccd6f6);
+            margin: 0;
+        }
+
+        .team-detail {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--color-text-muted, #8892b0);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .team-kv-list {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 0.3rem 0.8rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.78rem;
+        }
+        .team-kv-list dt { color: var(--color-text-muted, #8892b0); }
+        .team-kv-list dd { color: var(--color-text, #ccd6f6); margin: 0; word-break: break-word; }
+
+        .team-roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        .team-role {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 3px;
+            background: rgba(240,160,48,0.08);
+            color: #f0a030;
+            border: 1px solid rgba(240,160,48,0.2);
+        }
+
+        .team-links { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.82rem; }
+        .team-links a {
+            color: var(--color-accent, #f0a030);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+        }
+        .team-links a:hover { text-decoration: underline; }
+
+        .teams-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--color-text-muted, #8892b0);
+            font-family: 'Space Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-hero" style="background: linear-gradient(135deg, #1a2332 0%, #0f1821 100%);">
+        <div class="project-hero-overlay"></div>
+        <a href="index.html#projects" class="project-back">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+            <span data-i18n="back_to_projects">Back to Projects</span>
+        </a>
+        <h1 class="project-hero-title">UBC Design Teams &mdash; Recruitment Tracker</h1>
+    </div>
+
+    <div class="project-layout">
+    <main class="project-content" style="max-width: 1100px;">
+
+        <section class="proj-section proj-reveal" id="overview">
+            <h2 class="proj-heading">Overview</h2>
+            <p>Auto-generated tracker of recruitment status for <strong>33 UBC Engineering design teams</strong>. A scheduled GitHub Action re-scrapes every team's recruitment page weekly between <strong>August 15 and September 15</strong>, then asks <strong>Claude (Haiku)</strong> to turn the raw HTML into structured summaries. Outside that window the data is frozen from the last run.</p>
+            <p>Built as a pipeline: Selenium for JS-rendered pages &rarr; spaCy NER to extract dates from the UBC directory &rarr; per-team page scrape &rarr; Claude summarization to JSON &rarr; this page fetches it.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <section class="proj-section proj-reveal" id="teams">
+            <div class="teams-meta" id="teamsMeta"></div>
+
+            <div class="teams-filters" id="teamsFilters">
+                <button class="teams-filter active" data-filter="all">All</button>
+                <button class="teams-filter" data-filter="open">Open</button>
+                <button class="teams-filter" data-filter="closed">Closed</button>
+                <button class="teams-filter" data-filter="unknown">Unknown</button>
+            </div>
+
+            <div class="teams-grid" id="teamsGrid">
+                <div class="teams-empty">Loading team data…</div>
+            </div>
+        </section>
+
+    </main>
+    </div>
+
+    <script src="mn-translations.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        var reveals = document.querySelectorAll('.proj-reveal, .proj-reveal-stagger');
+        if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(e) {
+                    if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            reveals.forEach(function(el) { obs.observe(el); });
+        } else {
+            reveals.forEach(function(el) { el.classList.add('revealed'); });
+        }
+    })();
+
+    (function() {
+        var gridEl = document.getElementById('teamsGrid');
+        var metaEl = document.getElementById('teamsMeta');
+        var filterBar = document.getElementById('teamsFilters');
+        var currentFilter = 'all';
+        var allTeams = [];
+
+        function escapeHtml(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function formatDate(iso) {
+            if (!iso) return 'unknown';
+            var d = new Date(iso);
+            if (isNaN(d.getTime())) return iso;
+            return d.toUTCString().replace(' GMT', ' UTC');
+        }
+
+        function renderMeta(data) {
+            var counts = { open: 0, closed: 0, unknown: 0 };
+            (data.teams || []).forEach(function(t) {
+                counts[t.status] = (counts[t.status] || 0) + 1;
+            });
+            var note = data.note ? ' · <span style="color:#e65a5a;">' + escapeHtml(data.note) + '</span>' : '';
+            metaEl.innerHTML =
+                '<span class="kv">Last refresh: <b>' + escapeHtml(formatDate(data.generated_at)) + '</b></span>' +
+                '<span class="kv">Model: <b>' + escapeHtml(data.model || '—') + '</b></span>' +
+                '<span class="kv">Teams: <b>' + ((data.teams || []).length) + '</b></span>' +
+                '<span class="kv">Open: <b>' + (counts.open || 0) + '</b></span>' +
+                '<span class="kv">Closed: <b>' + (counts.closed || 0) + '</b></span>' +
+                '<span class="kv">Unknown: <b>' + (counts.unknown || 0) + '</b></span>' +
+                note;
+        }
+
+        function renderCard(t) {
+            var status = (t.status || 'unknown').toLowerCase();
+            var types = (t.types || []).map(function(x) {
+                return '<span class="team-type-tag">' + escapeHtml(x) + '</span>';
+            }).join('');
+            var roles = (t.roles || []).slice(0, 8).map(function(r) {
+                return '<span class="team-role">' + escapeHtml(r) + '</span>';
+            }).join('');
+
+            var kv = '';
+            if (t.timeline)        kv += '<dt>Timeline</dt><dd>' + escapeHtml(t.timeline) + '</dd>';
+            if (t.status_detail)   kv += '<dt>Detail</dt><dd>' + escapeHtml(t.status_detail) + '</dd>';
+
+            var links = '';
+            if (t.homepage)          links += '<a href="' + escapeHtml(t.homepage) + '" target="_blank" rel="noopener">Homepage &nearr;</a>';
+            if (t.recruitment_url)   links += '<a href="' + escapeHtml(t.recruitment_url) + '" target="_blank" rel="noopener">Recruitment page &nearr;</a>';
+            if (t.application_link)  links += '<a href="' + escapeHtml(t.application_link) + '" target="_blank" rel="noopener">Apply &nearr;</a>';
+
+            return '' +
+                '<article class="team-card" data-status="' + status + '">' +
+                    '<div class="team-card-top">' +
+                        '<h3 class="team-name">' + escapeHtml(t.name) + '</h3>' +
+                        '<span class="team-status ' + status + '">' + status + '</span>' +
+                    '</div>' +
+                    (types ? '<div class="team-types">' + types + '</div>' : '') +
+                    (t.summary ? '<p class="team-summary">' + escapeHtml(t.summary) + '</p>' : '') +
+                    (kv ? '<dl class="team-kv-list">' + kv + '</dl>' : '') +
+                    (roles ? '<div class="team-roles">' + roles + '</div>' : '') +
+                    (links ? '<div class="team-links">' + links + '</div>' : '') +
+                '</article>';
+        }
+
+        function render() {
+            var teams = allTeams.filter(function(t) {
+                return currentFilter === 'all' || (t.status || 'unknown') === currentFilter;
+            });
+            if (teams.length === 0) {
+                gridEl.innerHTML = '<div class="teams-empty">No teams match this filter.</div>';
+                return;
+            }
+            teams.sort(function(a, b) {
+                var order = { open: 0, unknown: 1, closed: 2 };
+                var da = order[a.status] != null ? order[a.status] : 3;
+                var db = order[b.status] != null ? order[b.status] : 3;
+                if (da !== db) return da - db;
+                return a.name.localeCompare(b.name);
+            });
+            gridEl.innerHTML = teams.map(renderCard).join('');
+        }
+
+        filterBar.addEventListener('click', function(e) {
+            var btn = e.target.closest('.teams-filter');
+            if (!btn) return;
+            currentFilter = btn.getAttribute('data-filter');
+            document.querySelectorAll('.teams-filter').forEach(function(b) {
+                b.classList.toggle('active', b === btn);
+            });
+            render();
+        });
+
+        fetch('data/teams.json', { cache: 'no-cache' })
+            .then(function(r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+            })
+            .then(function(data) {
+                allTeams = data.teams || [];
+                renderMeta(data);
+                render();
+            })
+            .catch(function(err) {
+                metaEl.textContent = '';
+                gridEl.innerHTML = '<div class="teams-empty">Could not load team data: ' + escapeHtml(err.message) + '</div>';
+            });
+    })();
+    </script>
+</body>
+</html>

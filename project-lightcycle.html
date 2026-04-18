@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line's War — Light Cycle Game on RISC-V — Bo Ti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+    <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})();
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body>
+    <div class="project-hero" style="background-image: url('media/cpen211_lab6_cover.png'); background-size: contain; background-repeat: no-repeat; background-color: #87ceeb;">
+        <div class="project-hero-overlay"></div>
+        <a href="index.html#projects" class="project-back">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+            <span data-i18n="back_to_projects">Back to Projects</span>
+        </a>
+        <h1 class="project-hero-title" data-i18n="project5_name">Line's War &mdash; Light Cycle Game on RISC-V</h1>
+    </div>
+
+    <div class="project-layout">
+
+    <!-- ── Table of Contents sidebar ── -->
+    <aside class="proj-toc" id="projToc">
+        <div class="proj-toc-inner">
+            <span class="proj-toc-title" data-i18n="toc_contents">Contents</span>
+            <nav style="position: relative;">
+                <div class="proj-toc-progress">
+                    <div class="proj-toc-progress-fill" id="tocProgress"></div>
+                </div>
+                <a href="#overview" class="proj-toc-link active" data-i18n="toc_overview">Overview</a>
+                <a href="#riscv" class="proj-toc-link" data-i18n="lc_toc_riscv">RISC-V Platform</a>
+                <a href="#demo" class="proj-toc-link" data-i18n="lc_toc_demo">Gameplay Demo</a>
+                <a href="#tech" class="proj-toc-link" data-i18n="toc_tech">Tech Stack</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="project-content">
+
+        <!-- ── Meta bar ── -->
+        <div class="proj-meta proj-reveal">
+            <div class="proj-meta-item">
+                <span class="proj-meta-label" data-i18n="meta_platform">Platform</span>
+                <span class="proj-meta-value">Nios V (RISC-V) on DE1-SoC FPGA</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label" data-i18n="meta_language">Language</span>
+                <span class="proj-meta-value">Bare-metal C</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label" data-i18n="meta_date">Date</span>
+                <span class="proj-meta-value">November 2025</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label" data-i18n="meta_source">Source</span>
+                <a href="https://github.com/Tibo-vagenBird/Light-Cycle-Game-on-HPV-DE1_SoC" target="_blank" rel="noopener" class="proj-meta-link">GitHub &nearr;</a>
+            </div>
+        </div>
+
+        <!-- ── Overview ── -->
+        <section class="proj-section proj-reveal" id="overview">
+            <h2 class="proj-heading" data-i18n="lc_overview_h">Overview</h2>
+            <p data-i18n="lc_overview_p">A Tron-style two-player Light Cycle game written in bare-metal C, running on a <strong>Nios V (RISC-V)</strong> soft-core processor instantiated on the Intel DE1-SoC FPGA. Players race trails across a 320&times;240 VGA frame buffer; touching any wall, obstacle, or trail loses the round. Includes a player-vs-AI mode driven by a simple wall-avoiding heuristic, multi-round scoring on the HEX displays, and an animated title screen rendered with a custom 8&times;8 bitmap font.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── RISC-V Platform ── -->
+        <section class="proj-section proj-reveal" id="riscv">
+            <h2 class="proj-heading" data-i18n="lc_riscv_h">RISC-V Platform</h2>
+            <p data-i18n="lc_riscv_p">The entire game runs on a <strong>Nios V/m</strong> soft processor &mdash; Intel's RISC-V (RV32I) soft-core that replaces the legacy Nios II on Quartus. All graphics, input polling, and game state are driven directly from C through memory-mapped I/O: the VGA pixel buffer at <code>0x08000000</code>, push buttons, slide switches, seven-segment HEX displays, and the RISC-V <code>mtime</code> machine timer at <code>0xFF202100</code>. No OS, no HAL, no driver layer &mdash; just RISC-V instructions writing directly to peripheral addresses.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Demo Video ── -->
+        <section class="proj-section proj-reveal" id="demo">
+            <h2 class="proj-heading" data-i18n="lc_demo_h">Gameplay Demo</h2>
+            <figure class="proj-figure proj-reveal">
+                <video src="media/cpen211_lab6.mp4" controls muted loop playsinline preload="metadata" style="width: 100%; border-radius: 8px;"></video>
+                <figcaption data-i18n="lc_demo_caption">Live gameplay on the DE1-SoC &mdash; two-player race with AI opponent and round counter</figcaption>
+            </figure>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Tech stack ── -->
+        <section class="proj-section proj-reveal" id="tech">
+            <div class="proj-tags proj-reveal-stagger">
+                <span>RISC-V (RV32I)</span>
+                <span>Nios V Soft Processor</span>
+                <span>Bare-metal C</span>
+                <span>DE1-SoC FPGA</span>
+                <span>Memory-Mapped I/O</span>
+                <span>VGA Frame Buffer</span>
+                <span>Quartus</span>
+            </div>
+        </section>
+
+    </main>
+
+    </div><!-- .project-layout -->
+
+    <script src="mn-translations.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function() {
+        /* ── Scroll-triggered reveal (IntersectionObserver) ── */
+        var reveals = document.querySelectorAll('.proj-reveal, .proj-reveal-stagger');
+        if ('IntersectionObserver' in window) {
+            var revealObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            reveals.forEach(function(el) { revealObs.observe(el); });
+        } else {
+            reveals.forEach(function(el) { el.classList.add('revealed'); });
+        }
+
+        /* ── TOC: scroll spy + progress bar ── */
+        var sections = document.querySelectorAll('.proj-section[id]');
+        var tocLinks = document.querySelectorAll('.proj-toc-link');
+        var progressFill = document.getElementById('tocProgress');
+        if (!sections.length || !tocLinks.length) return;
+
+        tocLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - 24;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+
+        var ticking = false;
+        function updateActive() {
+            var scrollY = window.scrollY + 80;
+            var current = '';
+            var currentIdx = 0;
+            sections.forEach(function(sec, i) {
+                if (sec.offsetTop <= scrollY) {
+                    current = sec.id;
+                    currentIdx = i;
+                }
+            });
+            tocLinks.forEach(function(link) {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+
+            if (progressFill && sections.length > 1) {
+                var pct = (currentIdx / (sections.length - 1)) * 100;
+                progressFill.style.height = pct + '%';
+            }
+
+            ticking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateActive);
+                ticking = true;
+            }
+        });
+        updateActive();
+    })();
+    </script>
+</body>
+</html>
