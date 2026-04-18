@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T23:21:18Z",
+  "generated_at": "2026-04-18T23:46:26Z",
   "model": "claude-haiku-4-5-20251001",
   "teams": [
     {
@@ -9,12 +9,15 @@
       ],
       "homepage": "https://www.ubcaerodesign.com/",
       "recruitment_url": "https://www.ubcaerodesign.com/recruitment",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TnxMLBjfTm7N9d7Wj'}",
-      "timeline": "Mid-September",
-      "roles": [],
+      "status": "closed",
+      "status_detail": "APPLICATIONS ARE CURRENTLY CLOSED. Next recruitment cycle begins in August 2026.",
+      "timeline": "August 2026",
+      "roles": [
+        "Technical team members",
+        "Administrative team members"
+      ],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TnxMLBjfTm7N9d7Wj'}"
+      "summary": "UBC AeroDesign is currently closed to applications and will reopen recruitment in August 2026. The team welcomes all UBC undergraduate and graduate students to apply for technical and administrative positions working on remotely-piloted aircraft and autonomous drone projects."
     },
     {
       "name": "AgroBot",
@@ -25,12 +28,27 @@
       ],
       "homepage": "https://ubcagrobot.com/",
       "recruitment_url": "https://ubcagrobot.com/#/recruitment",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6ToHh6MEwuKHhrgFhq'}",
+      "status": "closed",
+      "status_detail": "Applications for the team are now closed, stay tuned for updates in early May!",
       "timeline": "January, May, September",
-      "roles": [],
+      "roles": [
+        "Applied AI",
+        "Chassis / Powertrain",
+        "Electrical",
+        "System Architecture",
+        "Mechatronics",
+        "Navigation",
+        "Automation",
+        "Plants",
+        "Structure",
+        "Web Development",
+        "Agricultural Research",
+        "Finance",
+        "Marketing",
+        "Outreach"
+      ],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6ToHh6MEwuKHhrgFhq'}"
+      "summary": "AgroBot recruitment is currently closed, with updates expected in early May. Interested candidates can email ubcagrobot@gmail.com for questions and should check back for the next recruitment cycle."
     },
     {
       "name": "Baja",
@@ -56,11 +74,11 @@
       "homepage": "https://ubcbiot.com/",
       "recruitment_url": "https://ubcbiot.com/recruitment/",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TokEAp9Yuu8xc4oEz'}",
+      "status_detail": "",
       "timeline": "September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TokEAp9Yuu8xc4oEz'}"
+      "summary": "The recruitment page contains general information about the team and sponsorship opportunities but does not explicitly state whether recruitment is currently open or provide specific application details. Prospective members should contact ubcbiot@gmail.com or visit the recruitment section for more information."
     },
     {
       "name": "Biomedical Engineering Student Team",
@@ -130,12 +148,12 @@
       ],
       "homepage": "https://yesitfloats.ca/",
       "recruitment_url": "https://yesitfloats.ca/join-the-team/",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tp55RoQKV8MUMWXQZ'}",
-      "timeline": "early July, summer, the beginning of the year",
+      "status": "closed",
+      "status_detail": "Recruitment is closed. Keep an eye out for our recruitment announcements in August!",
+      "timeline": "August",
       "roles": [],
-      "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tp55RoQKV8MUMWXQZ'}"
+      "application_link": "https://docs.google.com/forms/d/e/1FAIpQLSdjaNwoK1HRnR2nVvBnmz7QVOGFO645sRKX9eGezvZ7gDmXpg/viewform",
+      "summary": "Concrete Canoe recruitment is currently closed, but they invite interested students to watch for announcements in August. You can also find the team at their booth during Imagine Day."
     },
     {
       "name": "Concrete Toboggan",
@@ -174,11 +192,11 @@
       "homepage": "https://www.formulaubc.com/",
       "recruitment_url": "https://www.formulaubc.com/join-the-team",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpZ6gdLBcTLWGgZzR'}",
-      "timeline": "mid-Sept.",
+      "status_detail": "Online application opens the weekend before UBC Imagine day and remains open for about two weeks",
+      "timeline": "End of August through middle of September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpZ6gdLBcTLWGgZzR'}"
+      "summary": "Formula UBC recruits new members annually from late August through mid-September via an online application that opens around UBC Imagine Day. The team accepts students from all undergraduate and graduate programs and reviews applications on a rolling basis for interviews."
     },
     {
       "name": "Mars Colony",
@@ -202,12 +220,18 @@
       ],
       "homepage": "https://openrobotics.ca/",
       "recruitment_url": "https://openrobotics.ca/join",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpqxHEjMehnqNayDy'}",
+      "status": "open",
+      "status_detail": "Open Positions listed with 'Apply Now' buttons for multiple roles",
       "timeline": "September and first half of January",
-      "roles": [],
-      "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpqxHEjMehnqNayDy'}"
+      "roles": [
+        "Software Member",
+        "Software DevOps",
+        "Firmware Member",
+        "Mechanical Member",
+        "Graphics Designer"
+      ],
+      "application_link": "https://docs.google.com/forms/d/e/1FAIpQLScb8jppAFr8eEqc4t3kIfBsWGvnMAiBFBTZjfE7-DlBATWnNA/viewform?usp=header",
+      "summary": "Open Robotics is actively recruiting across software, firmware, mechanical, and design roles with 128 total positions available. Applications are accepted via a Google Form with recruitment cycles in September and January."
     },
     {
       "name": "Orbit",
@@ -217,12 +241,12 @@
       ],
       "homepage": "http://ubcorbit.com/",
       "recruitment_url": "https://www.ubcorbit.com/joinus",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqJjvK6ZtxsPLt78s'}",
-      "timeline": "Winter - January 15, 2025",
+      "status": "closed",
+      "status_detail": "RECRUITMENT CYCLE: CONCLUDED. Application Window Closed. Check back next term for new opportunities.",
+      "timeline": "Next term (start of school term)",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqJjvK6ZtxsPLt78s'}"
+      "summary": "UBC Orbit's current recruitment cycle has concluded and applications are no longer being accepted. Prospective members should check back at the start of the next school term for new openings in their engineering and operations subsystems."
     },
     {
       "name": "Rapid",
@@ -233,12 +257,18 @@
       ],
       "homepage": "https://ubc-rapid.com/",
       "recruitment_url": "https://ubc-rapid.com/#/join-us",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqZcwHXukQfXZvrgd'}",
-      "timeline": "September 17",
-      "roles": [],
+      "status": "closed",
+      "status_detail": "The applications for 2025/26 are now closed",
+      "timeline": "September (based on directory hint of September 17)",
+      "roles": [
+        "CAD Modelling",
+        "Printer Repair",
+        "3D Printing Orders",
+        "Service Sub-team Members",
+        "Project Sub-team Members"
+      ],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqZcwHXukQfXZvrgd'}"
+      "summary": "UBC Rapid's applications for 2025/26 are currently closed. They recruit members for CAD modelling, 3D printer repair, and printing services, with new members attending workshops to learn prototyping basics before joining service or project sub-teams."
     },
     {
       "name": "Rocket",
@@ -261,12 +291,12 @@
       ],
       "homepage": "https://ubcrover.com/",
       "recruitment_url": "https://www.ubcrover.com/join.html",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqqVGP9rVdtjfcNet'}",
-      "timeline": "January, late August-early September, the end of September",
+      "status": "closed",
+      "status_detail": "Recruitment Status: CLOSED",
+      "timeline": "Fall (September)",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqqVGP9rVdtjfcNet'}"
+      "summary": "UBC Rover's recruitment is currently closed. The team conducts its main recruitment cycle every Fall in September, so interested students should follow their social media for announcements about the next opening."
     },
     {
       "name": "Sailbot",
@@ -290,12 +320,20 @@
       ],
       "homepage": "https://www.ubcseismic.com/",
       "recruitment_url": "https://www.ubcseismic.com/join-the-team",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrAaet8ddJ5sVQ1Fy'}",
-      "timeline": "September 17, 2023",
-      "roles": [],
+      "status": "closed",
+      "status_detail": "The UBC Seismic Team recruitment for the 2025-2026 year is closed.",
+      "timeline": "2025-2026 year",
+      "roles": [
+        "Design & Analysis",
+        "Architecture & 3D Modelling",
+        "Construction & Drafting",
+        "Marketing, Outreach, & Sponsorship",
+        "Geotechnical",
+        "Finance",
+        "Material Testing"
+      ],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrAaet8ddJ5sVQ1Fy'}"
+      "summary": "UBC Seismic's recruitment for the 2025-2026 year is currently closed. Interested students should check back when the next recruitment cycle opens for opportunities in structural design, architecture, construction, and support roles."
     },
     {
       "name": "Smart City",
@@ -363,12 +401,12 @@
       ],
       "homepage": "https://subc.ca/",
       "recruitment_url": "https://subc.ca/recruitment",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrbP5iuMYmdUMpcgB'}",
-      "timeline": "December, September",
+      "status": "closed",
+      "status_detail": "Recruitment closed on Sept 21, 2025",
+      "timeline": "September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrbP5iuMYmdUMpcgB'}"
+      "summary": "SUBC recruitment is currently closed as of September 21, 2025. Interested candidates should check back for the next recruitment cycle or contact the team directly for more information."
     },
     {
       "name": "Supermileage",
@@ -421,12 +459,12 @@
       ],
       "homepage": "https://ubcthunderbikes.com/index.html",
       "recruitment_url": "https://linktr.ee/ubc_thunderbikes",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Ts1gETEf6hEbQXeXW'}",
-      "timeline": "",
+      "status": "open",
+      "status_detail": "UBC Thunderbikes Application Form 2025-26 listed on recruitment page",
+      "timeline": "2025-26 academic year",
       "roles": [],
-      "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Ts1gETEf6hEbQXeXW'}"
+      "application_link": "https://forms.gle/mYPG9eaxKw8P6Hjn6",
+      "summary": "UBC Thunderbikes, an electric motorcycle engineering design team, is actively recruiting for the 2025-26 season. Interested students can apply through their Google Form application link."
     },
     {
       "name": "Thunderbird Aerospace",
@@ -450,12 +488,12 @@
       ],
       "homepage": "https://www.ubcthunderbots.ca/",
       "recruitment_url": "https://www.ubcthunderbots.ca/recruitment",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TsG4T1mHjgrbJHymG'}",
-      "timeline": "early-September, mid-August",
+      "status": "closed",
+      "status_detail": "2025-26 Applications are NOW closed.",
+      "timeline": "Early September (usually first week(s) of September)",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TsG4T1mHjgrbJHymG'}"
+      "summary": "UBC Thunderbots is currently closed to applications for the 2025-26 cycle. The team recruits annually in early September on a rolling basis, welcoming students from all skill levels and disciplines interested in autonomous soccer-playing robots."
     },
     {
       "name": "Uncrewed Aircraft System",
@@ -466,12 +504,12 @@
       ],
       "homepage": "https://ubcuas.com/",
       "recruitment_url": "https://ubcuas.com/recruitment",
-      "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tsd9JDhdyYkFTHgkr'}",
-      "timeline": "late August, mid September, some years",
+      "status": "closed",
+      "status_detail": "RECRUITMENT CLOSED",
+      "timeline": "Applications open each September and January",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tsd9JDhdyYkFTHgkr'}"
+      "summary": "UBC Uncrewed Aircraft System team is currently closed to applications. They welcome engineers, makers, and storytellers to join; applications reopen in September and January each year."
     },
     {
       "name": "Volcan",
