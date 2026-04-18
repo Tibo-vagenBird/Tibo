@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T22:25:59Z",
+  "generated_at": "2026-04-18T23:21:18Z",
   "model": "claude-haiku-4-5-20251001",
   "teams": [
     {
@@ -10,11 +10,11 @@
       "homepage": "https://www.ubcaerodesign.com/",
       "recruitment_url": "https://www.ubcaerodesign.com/recruitment",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FA5GkeLgj9BN4bkoA'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TnxMLBjfTm7N9d7Wj'}",
       "timeline": "Mid-September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FA5GkeLgj9BN4bkoA'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TnxMLBjfTm7N9d7Wj'}"
     },
     {
       "name": "AgroBot",
@@ -26,11 +26,11 @@
       "homepage": "https://ubcagrobot.com/",
       "recruitment_url": "https://ubcagrobot.com/#/recruitment",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FAgEZP581BzZPwcTo'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6ToHh6MEwuKHhrgFhq'}",
       "timeline": "January, May, September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FAgEZP581BzZPwcTo'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6ToHh6MEwuKHhrgFhq'}"
     },
     {
       "name": "Baja",
@@ -56,11 +56,11 @@
       "homepage": "https://ubcbiot.com/",
       "recruitment_url": "https://ubcbiot.com/recruitment/",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FB34mnXUNwMLSQqkV'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TokEAp9Yuu8xc4oEz'}",
       "timeline": "September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FB34mnXUNwMLSQqkV'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TokEAp9Yuu8xc4oEz'}"
     },
     {
       "name": "Biomedical Engineering Student Team",
@@ -131,11 +131,11 @@
       "homepage": "https://yesitfloats.ca/",
       "recruitment_url": "https://yesitfloats.ca/join-the-team/",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FBQeA6wqi91xccJyK'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tp55RoQKV8MUMWXQZ'}",
       "timeline": "early July, summer, the beginning of the year",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FBQeA6wqi91xccJyK'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tp55RoQKV8MUMWXQZ'}"
     },
     {
       "name": "Concrete Toboggan",
@@ -174,11 +174,11 @@
       "homepage": "https://www.formulaubc.com/",
       "recruitment_url": "https://www.formulaubc.com/join-the-team",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FBtuY8rsSxa1F7pwz'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpZ6gdLBcTLWGgZzR'}",
       "timeline": "mid-Sept.",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FBtuY8rsSxa1F7pwz'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpZ6gdLBcTLWGgZzR'}"
     },
     {
       "name": "Mars Colony",
@@ -203,11 +203,11 @@
       "homepage": "https://openrobotics.ca/",
       "recruitment_url": "https://openrobotics.ca/join",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCEVqhBiMDvt9XsY9'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpqxHEjMehnqNayDy'}",
       "timeline": "September and first half of January",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCEVqhBiMDvt9XsY9'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TpqxHEjMehnqNayDy'}"
     },
     {
       "name": "Orbit",
@@ -218,11 +218,11 @@
       "homepage": "http://ubcorbit.com/",
       "recruitment_url": "https://www.ubcorbit.com/joinus",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCZM1YDVMsaztC8p7'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqJjvK6ZtxsPLt78s'}",
       "timeline": "Winter - January 15, 2025",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCZM1YDVMsaztC8p7'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqJjvK6ZtxsPLt78s'}"
     },
     {
       "name": "Rapid",
@@ -234,11 +234,11 @@
       "homepage": "https://ubc-rapid.com/",
       "recruitment_url": "https://ubc-rapid.com/#/join-us",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCtgz8xoohe2xPhks'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqZcwHXukQfXZvrgd'}",
       "timeline": "September 17",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FCtgz8xoohe2xPhks'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqZcwHXukQfXZvrgd'}"
     },
     {
       "name": "Rocket",
@@ -262,11 +262,11 @@
       "homepage": "https://ubcrover.com/",
       "recruitment_url": "https://www.ubcrover.com/join.html",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDH16YzNjoSHsXABP'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqqVGP9rVdtjfcNet'}",
       "timeline": "January, late August-early September, the end of September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDH16YzNjoSHsXABP'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TqqVGP9rVdtjfcNet'}"
     },
     {
       "name": "Sailbot",
@@ -291,11 +291,11 @@
       "homepage": "https://www.ubcseismic.com/",
       "recruitment_url": "https://www.ubcseismic.com/join-the-team",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDcM9tV2yQCh2ByUS'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrAaet8ddJ5sVQ1Fy'}",
       "timeline": "September 17, 2023",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDcM9tV2yQCh2ByUS'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrAaet8ddJ5sVQ1Fy'}"
     },
     {
       "name": "Smart City",
@@ -364,11 +364,11 @@
       "homepage": "https://subc.ca/",
       "recruitment_url": "https://subc.ca/recruitment",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDwC7hEr99CyT7a25'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrbP5iuMYmdUMpcgB'}",
       "timeline": "December, September",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FDwC7hEr99CyT7a25'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TrbP5iuMYmdUMpcgB'}"
     },
     {
       "name": "Supermileage",
@@ -422,11 +422,11 @@
       "homepage": "https://ubcthunderbikes.com/index.html",
       "recruitment_url": "https://linktr.ee/ubc_thunderbikes",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FEH2s6zenNC1FjTGw'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Ts1gETEf6hEbQXeXW'}",
       "timeline": "",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FEH2s6zenNC1FjTGw'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Ts1gETEf6hEbQXeXW'}"
     },
     {
       "name": "Thunderbird Aerospace",
@@ -451,11 +451,11 @@
       "homepage": "https://www.ubcthunderbots.ca/",
       "recruitment_url": "https://www.ubcthunderbots.ca/recruitment",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FEcsMgWhPRgMoF24v'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TsG4T1mHjgrbJHymG'}",
       "timeline": "early-September, mid-August",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FEcsMgWhPRgMoF24v'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6TsG4T1mHjgrbJHymG'}"
     },
     {
       "name": "Uncrewed Aircraft System",
@@ -467,11 +467,11 @@
       "homepage": "https://ubcuas.com/",
       "recruitment_url": "https://ubcuas.com/recruitment",
       "status": "unknown",
-      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FF1RxHyWYhmC6Gcca'}",
+      "status_detail": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tsd9JDhdyYkFTHgkr'}",
       "timeline": "late August, mid September, some years",
       "roles": [],
       "application_link": "",
-      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC2FF1RxHyWYhmC6Gcca'}"
+      "summary": "Summarization failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CaC6Tsd9JDhdyYkFTHgkr'}"
     },
     {
       "name": "Volcan",
