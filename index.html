@@ -303,9 +303,15 @@
 
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>Bo Ti<span class="logo-bracket">/&gt;</span>
-            </a>
+            <div class="nav-logos">
+                <a href="#hero" class="nav-logo">
+                    <span class="logo-bracket">&lt;</span>Bo Ti<span class="logo-bracket">/&gt;</span>
+                </a>
+                <span class="nav-logo-sep" aria-hidden="true">·</span>
+                <a href="saqira.html" class="nav-logo nav-logo-sister" title="Saqira's illustration portfolio">
+                    <span class="logo-bracket logo-bracket-rose">&lt;</span>Saqira<span class="logo-bracket logo-bracket-rose">/&gt;</span>
+                </a>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-i18n="nav_about">About</a></li>
                 <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
@@ -314,13 +320,15 @@
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <a href="project-teams.html" class="teams-icon" aria-label="UBC Design Teams Recruitment Tracker" title="UBC Design Teams Recruitment Tracker">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <a href="project-teams.html" class="teams-cta" title="UBC Design Teams Recruitment Tracker">
+                    <svg class="teams-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                         <circle cx="9" cy="7" r="4"/>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                     </svg>
+                    <span class="teams-cta-label">Design Team Info</span>
+                    <span class="teams-cta-pulse" aria-hidden="true"></span>
                 </a>
                 <button class="theme-toggle" id="themeSwitch" onclick="toggleTheme()" aria-label="Toggle theme">
                     <span class="theme-icon" id="themeIcon">&#9728;</span>
@@ -434,6 +442,29 @@
                         <span>SSR PWM Control</span>
                         <span>UART</span>
                         <span>DE10-Lite FPGA</span>
+                    </div>
+                </a>
+
+                <a href="project-teams.html" class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="media/ubc_designteam.png" alt="UBC Engineering Design Teams — recruitment tracker" class="project-img" loading="lazy">
+                        <div class="project-img-fade"></div>
+                        <div class="project-img-scanline"></div>
+                    </div>
+                    <div class="project-top">
+                        <span class="project-label">Utility</span>
+                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                    </div>
+                    <h3 class="project-name">UBC Design Teams &mdash; Recruitment Tracker</h3>
+                    <p class="project-desc">Weekly-scheduled Python ETL that scrapes 33 UBC engineering design team recruitment pages with Selenium, summarizes each via the Claude API, and commits a static JSON that the site renders. Runs on GitHub Actions between Aug 15 &ndash; Sep 15 only.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>BeautifulSoup</span>
+                        <span>Anthropic API</span>
+                        <span>Claude Haiku 4.5</span>
+                        <span>GitHub Actions</span>
+                        <span>Static JSON</span>
                     </div>
                 </a>
 

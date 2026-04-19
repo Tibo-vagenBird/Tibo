@@ -190,7 +190,7 @@
 
         <hr class="proj-divider">
 
-        <section class="proj-section proj-reveal" id="teams">
+        <section class="proj-section" id="teams">
             <div class="teams-meta" id="teamsMeta"></div>
 
             <div class="teams-filters" id="teamsFilters">
@@ -218,7 +218,7 @@
                 entries.forEach(function(e) {
                     if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
                 });
-            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0, rootMargin: '0px 0px 300px 0px' });
             reveals.forEach(function(el) { obs.observe(el); });
         } else {
             reveals.forEach(function(el) { el.classList.add('revealed'); });

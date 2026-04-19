@@ -1,0 +1,208 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "<Bo Ti/>" [ref=e4] [cursor=pointer]:
+        - /url: "#hero"
+      - list [ref=e5]:
+        - listitem [ref=e6]:
+          - link "About" [ref=e7] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e8]:
+          - link "Projects" [ref=e9] [cursor=pointer]:
+            - /url: "#projects"
+        - listitem [ref=e10]:
+          - link "Skills" [ref=e11] [cursor=pointer]:
+            - /url: "#skills"
+        - listitem [ref=e12]:
+          - link "Experience" [ref=e13] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e14]:
+          - link "Contact" [ref=e15] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e16]:
+        - link "Saqira's Art" [ref=e17] [cursor=pointer]:
+          - /url: saqira.html
+          - img [ref=e18]
+          - generic [ref=e23]: Saqira's Art
+        - link "Design Team Info" [ref=e24] [cursor=pointer]:
+          - /url: project-teams.html
+          - img [ref=e25]
+          - generic [ref=e30]: Design Team Info
+        - button "Toggle theme" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: ☾
+        - button "Toggle language" [ref=e33] [cursor=pointer]: CN
+  - generic [ref=e34]:
+    - heading "Bo Ti" [level=1] [ref=e36]
+    - generic [ref=e38]: scroll
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]: "01"
+      - heading "About Me" [level=2] [ref=e44]
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: 2nd year Electrical Engineering student at UBC pursuing embedded software development — drivers, firmware, and real-time systems. Experienced in low-level programming with Assembly and C/C++, with scripting proficiency in Python for automation and tooling.
+        - paragraph [ref=e49]: I focus on embedded software development — writing drivers, firmware, and real-time control systems. My Python experience is in scripting and automation tooling, complementing my core work in low-level systems.
+      - generic [ref=e51]:
+        - generic [ref=e52]: // profile.jpg
+        - img "Bo Ti — profile photo" [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e56]: ID Bo Ti
+          - generic [ref=e57]: LOC Vancouver, BC
+          - generic [ref=e58]: ACTIVE
+  - generic [ref=e61]:
+    - generic [ref=e62]:
+      - generic [ref=e63]: "02"
+      - heading "Projects" [level=2] [ref=e64]
+    - generic [ref=e66]:
+      - link "La Voiture — robot car with handheld controller Featured Project La Voiture — Field Tracking & Remote Controlled Robot Three-mode robot car (line-following, joystick teleoperation, autonomous waypoint navigation) with STM32L051 car, EFM8LB12 handheld controller, and PyQt5 PC dashboard. Designed a custom bidirectional IR protocol through 5 iterations, achieving 27 fps throughput. Led team of 6. Embedded C STM32 HAL Custom IR Protocol PyQt5 3D Visualization CMake/Ninja BLE IMU FSM Design I2C" [ref=e67] [cursor=pointer]:
+        - /url: project-voiture.html
+        - img "La Voiture — robot car with handheld controller" [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e71]: Featured Project
+          - img [ref=e72]
+        - heading "La Voiture — Field Tracking & Remote Controlled Robot" [level=3] [ref=e74]
+        - paragraph [ref=e75]: Three-mode robot car (line-following, joystick teleoperation, autonomous waypoint navigation) with STM32L051 car, EFM8LB12 handheld controller, and PyQt5 PC dashboard. Designed a custom bidirectional IR protocol through 5 iterations, achieving 27 fps throughput. Led team of 6.
+        - generic [ref=e76]:
+          - generic [ref=e77]: Embedded C
+          - generic [ref=e78]: STM32 HAL
+          - generic [ref=e79]: Custom IR Protocol
+          - generic [ref=e80]: PyQt5
+          - generic [ref=e81]: 3D Visualization
+          - generic [ref=e82]: CMake/Ninja
+          - generic [ref=e83]: BLE
+          - generic [ref=e84]: IMU
+          - generic [ref=e85]: FSM Design
+          - generic [ref=e86]: I2C
+      - link "8052 Oven Reflow Controller — breadboard prototype with microcontroller Featured Project 8052 Oven Reflow Controller A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow. 8052 Assembly Cooperative Multitasking Pub-Sub Architecture FSM Design SSR PWM Control UART DE10-Lite FPGA" [ref=e87] [cursor=pointer]:
+        - /url: project-oven.html
+        - img "8052 Oven Reflow Controller — breadboard prototype with microcontroller" [ref=e89]
+        - generic [ref=e90]:
+          - generic [ref=e91]: Featured Project
+          - img [ref=e92]
+        - heading "8052 Oven Reflow Controller" [level=3] [ref=e94]
+        - paragraph [ref=e95]: A reflow soldering controller written entirely in 8052 Assembly on the DE10-Lite FPGA platform. I designed the pub-sub architecture with bit-addressable memory as a signal bus, and wrote all core FSMs including the 7-stage reflow control workflow.
+        - generic [ref=e96]:
+          - generic [ref=e97]: 8052 Assembly
+          - generic [ref=e98]: Cooperative Multitasking
+          - generic [ref=e99]: Pub-Sub Architecture
+          - generic [ref=e100]: FSM Design
+          - generic [ref=e101]: SSR PWM Control
+          - generic [ref=e102]: UART
+          - generic [ref=e103]: DE10-Lite FPGA
+      - link "UBC Engineering Design Teams — recruitment tracker Utility UBC Design Teams — Recruitment Tracker Weekly-scheduled Python ETL that scrapes 33 UBC engineering design team recruitment pages with Selenium, summarizes each via the Claude API, and commits a static JSON that the site renders. Runs on GitHub Actions between Aug 15 – Sep 15 only. Python Selenium BeautifulSoup Anthropic API Claude Haiku 4.5 GitHub Actions Static JSON" [ref=e104] [cursor=pointer]:
+        - /url: project-teams.html
+        - img "UBC Engineering Design Teams — recruitment tracker" [ref=e106]
+        - generic [ref=e107]:
+          - generic [ref=e108]: Utility
+          - img [ref=e109]
+        - heading "UBC Design Teams — Recruitment Tracker" [level=3] [ref=e111]
+        - paragraph [ref=e112]: Weekly-scheduled Python ETL that scrapes 33 UBC engineering design team recruitment pages with Selenium, summarizes each via the Claude API, and commits a static JSON that the site renders. Runs on GitHub Actions between Aug 15 – Sep 15 only.
+        - generic [ref=e113]:
+          - generic [ref=e114]: Python
+          - generic [ref=e115]: Selenium
+          - generic [ref=e116]: BeautifulSoup
+          - generic [ref=e117]: Anthropic API
+          - generic [ref=e118]: Claude Haiku 4.5
+          - generic [ref=e119]: GitHub Actions
+          - generic [ref=e120]: Static JSON
+      - link "Ulysses Ground Control Station — Qt 6 telemetry dashboard Featured Project Ulysses Ground Control Station Wrote the full C++ backend for UBC Rocket's Ulysses sounding rocket ground control station (Qt 6 / QML). Engineered SerialBridge for dual-port RFD900x radio communication with COBS framing and protobuf telemetry decoding at 10Hz. C++ QML Qt 6 Serial Communication RFD900x Radio Protobuf/nanopb COBS Framing Quaternion Math" [ref=e121] [cursor=pointer]:
+        - /url: project-ulysses.html
+        - img "Ulysses Ground Control Station — Qt 6 telemetry dashboard" [ref=e123]
+        - generic [ref=e124]:
+          - generic [ref=e125]: Featured Project
+          - img [ref=e126]
+        - heading "Ulysses Ground Control Station" [level=3] [ref=e128]
+        - paragraph [ref=e129]: Wrote the full C++ backend for UBC Rocket's Ulysses sounding rocket ground control station (Qt 6 / QML). Engineered SerialBridge for dual-port RFD900x radio communication with COBS framing and protobuf telemetry decoding at 10Hz.
+        - generic [ref=e130]:
+          - generic [ref=e131]: C++
+          - generic [ref=e132]: QML
+          - generic [ref=e133]: Qt 6
+          - generic [ref=e134]: Serial Communication
+          - generic [ref=e135]: RFD900x Radio
+          - generic [ref=e136]: Protobuf/nanopb
+          - generic [ref=e137]: COBS Framing
+          - generic [ref=e138]: Quaternion Math
+      - link "Light Cycle game on RISC-V — title screen Project Line's War — Light Cycle Game on RISC-V A Tron-style two-player Light Cycle game written in bare-metal C, running on a Nios V (RISC-V) soft-core processor on the Intel DE1-SoC FPGA. Drives VGA frame buffer, keys, and HEX displays directly through memory-mapped I/O. RISC-V (RV32I) Nios V Bare-metal C DE1-SoC FPGA VGA Frame Buffer" [ref=e139] [cursor=pointer]:
+        - /url: project-lightcycle.html
+        - img "Light Cycle game on RISC-V — title screen" [ref=e141]
+        - generic [ref=e142]:
+          - generic [ref=e143]: Project
+          - img [ref=e144]
+        - heading "Line's War — Light Cycle Game on RISC-V" [level=3] [ref=e146]
+        - paragraph [ref=e147]: A Tron-style two-player Light Cycle game written in bare-metal C, running on a Nios V (RISC-V) soft-core processor on the Intel DE1-SoC FPGA. Drives VGA frame buffer, keys, and HEX displays directly through memory-mapped I/O.
+        - generic [ref=e148]:
+          - generic [ref=e149]: RISC-V (RV32I)
+          - generic [ref=e150]: Nios V
+          - generic [ref=e151]: Bare-metal C
+          - generic [ref=e152]: DE1-SoC FPGA
+          - generic [ref=e153]: VGA Frame Buffer
+      - link "SolidWorks mouse model — advanced surfacing Project SolidWorks CAD Modeling Two self-directed modeling projects — a PC tower case (sheet metal) and a wireless mouse (advanced surfacing) — to build proficiency in SolidWorks across different CAD disciplines. SolidWorks Sheet Metal Advanced Surfacing 3D Sketch" [ref=e154] [cursor=pointer]:
+        - /url: project-solidworks.html
+        - img "SolidWorks mouse model — advanced surfacing" [ref=e156]
+        - generic [ref=e157]:
+          - generic [ref=e158]: Project
+          - img [ref=e159]
+        - heading "SolidWorks CAD Modeling" [level=3] [ref=e161]
+        - paragraph [ref=e162]: Two self-directed modeling projects — a PC tower case (sheet metal) and a wireless mouse (advanced surfacing) — to build proficiency in SolidWorks across different CAD disciplines.
+        - generic [ref=e163]:
+          - generic [ref=e164]: SolidWorks
+          - generic [ref=e165]: Sheet Metal
+          - generic [ref=e166]: Advanced Surfacing
+          - generic [ref=e167]: 3D Sketch
+  - generic [ref=e168]:
+    - generic [ref=e169]:
+      - generic [ref=e170]:
+        - generic [ref=e171]: "03"
+        - heading "Skills" [level=2] [ref=e172]
+      - generic [ref=e175]:
+        - generic [ref=e179]:
+          - generic [ref=e180]: My
+          - generic [ref=e181]: Skills
+        - generic [ref=e183] [cursor=pointer]: Languages
+        - generic [ref=e185] [cursor=pointer]: Embedded
+        - generic [ref=e187] [cursor=pointer]: Frameworks
+        - generic [ref=e189] [cursor=pointer]: Scripting
+        - generic [ref=e191] [cursor=pointer]: Dev Tools
+        - generic [ref=e193] [cursor=pointer]: CAD
+        - generic [ref=e195] [cursor=pointer]: Lab Gear
+    - generic:
+      - heading [level=3]
+      - paragraph
+  - generic [ref=e197]:
+    - generic [ref=e198]:
+      - generic [ref=e199]: "04"
+      - heading "Experience" [level=2] [ref=e200]
+    - generic [ref=e203]:
+      - generic [ref=e205]: 2025 - Present
+      - generic [ref=e206]:
+        - heading "Ground Control Software Engineer — Embedded Interface" [level=3] [ref=e207]
+        - generic [ref=e208]: UBC Rocket
+        - paragraph [ref=e209]: Building the ground control station for Ulysses using Qt Quick (C++/QML). Responsible for the C++ backend, radio modem interface, alarm processing, parameter settings, and settings page UI.
+  - generic [ref=e211]:
+    - generic [ref=e212]:
+      - generic [ref=e213]: "05"
+      - heading "Get In Touch" [level=2] [ref=e214]
+    - generic [ref=e216]:
+      - paragraph [ref=e217]: I'm always open to new opportunities and interesting projects. Feel free to reach out!
+      - link "bti@student.ubc.ca" [ref=e218] [cursor=pointer]:
+        - /url: mailto:bti@student.ubc.ca
+      - generic [ref=e219]:
+        - link "GitHub" [ref=e220] [cursor=pointer]:
+          - /url: https://github.com/Tibo-vagenBird
+          - img [ref=e221]
+        - link "LinkedIn" [ref=e223] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/bo-ti-0401b0300
+          - img [ref=e224]
+  - contentinfo [ref=e226]:
+    - generic [ref=e227]:
+      - paragraph [ref=e228]: © 2026 Bo Ti.
+      - generic [ref=e229]:
+        - link "GitHub" [ref=e230] [cursor=pointer]:
+          - /url: https://github.com/Tibo-vagenBird
+          - img [ref=e231]
+        - link "LinkedIn" [ref=e233] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/bo-ti-0401b0300
+          - img [ref=e234]
+        - link "Email" [ref=e236] [cursor=pointer]:
+          - /url: mailto:bti@student.ubc.ca
+          - img [ref=e237]

@@ -1,0 +1,121 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - link "s Saqira — illustrator & painter" [ref=e4]:
+      - /url: saqira.html
+      - generic [ref=e5]: s
+      - generic [ref=e6]:
+        - text: Saqira
+        - emphasis [ref=e7]: — illustrator & painter
+    - link "← to Bo's studio" [ref=e8]:
+      - /url: index.html
+  - generic [ref=e9]:
+    - img
+    - img
+    - img
+    - generic [ref=e10]:
+      - generic [ref=e11]: hello, i draw things ·
+      - heading "Saqira." [level=1] [ref=e12]
+      - paragraph [ref=e13]:
+        - text: A fifteen-year-old
+        - emphasis [ref=e14]: illustrator
+        - text: from the South. I work in inks, soft pastels, and the occasional quiet afternoon — making characters that feel like
+        - emphasis [ref=e15]: half-remembered friends
+        - text: .
+      - generic [ref=e16]:
+        - generic [ref=e17]: est. 2010
+        - generic [ref=e18]: guǎngzhōu · 广州
+        - generic [ref=e19]: pen & paper
+    - figure "— at the harbor, summer '25" [ref=e20]:
+      - img "Saqira smiling on the waterfront" [ref=e21]
+      - generic [ref=e22]: — at the harbor, summer '25
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: ✦ 01 · About the artist
+      - heading "A quiet pencil with loud ideas." [level=2] [ref=e27]:
+        - text: A quiet
+        - emphasis [ref=e28]: pencil
+        - text: with loud ideas.
+      - paragraph [ref=e29]:
+        - text: I started drawing before I could write full sentences. My older brother would leave sketchbooks on the kitchen table and I'd
+        - emphasis [ref=e30]: fill them with tiny people
+        - text: — wide eyes, soft hair, peace signs. I still draw the same girl, over and over. She looks a little like me and a little like nobody at all.
+      - paragraph [ref=e31]:
+        - text: Most of my work lives between
+        - emphasis [ref=e32]: manga
+        - text: and
+        - emphasis [ref=e33]: memory
+        - text: . I love lines that tremble a little. I love pink, but only the pink of old flower shop signs. I love the moment before a drawing is finished, when it still has the
+        - emphasis [ref=e34]: possibility
+        - text: of becoming something else.
+      - paragraph [ref=e35]:
+        - generic [ref=e36]: mostly ink. sometimes tea stains. always honest.
+    - complementary [ref=e37]:
+      - heading "studio notes." [level=3] [ref=e38]
+      - list [ref=e39]:
+        - listitem [ref=e40]:
+          - generic [ref=e41]: medium —
+          - generic [ref=e42]: ink, pencil, digital, sometimes gouache
+        - listitem [ref=e43]:
+          - generic [ref=e44]: books —
+          - generic [ref=e45]: Yoshitaka Amano, Taiyō Matsumoto, grandma's old comics
+        - listitem [ref=e46]:
+          - generic [ref=e47]: music —
+          - generic [ref=e48]: Hikaru Utada on repeat
+        - listitem [ref=e49]:
+          - generic [ref=e50]: grade —
+          - generic [ref=e51]: middle school, year 9
+        - listitem [ref=e52]:
+          - generic [ref=e53]: wishes —
+          - generic [ref=e54]: illustrate a picture book by 20
+        - listitem [ref=e55]:
+          - generic [ref=e56]: fear —
+          - generic [ref=e57]: drawing hands. always the hands.
+  - generic [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: ✦ 02 · Sketchbook
+        - heading "Pieces from the pink season." [level=2] [ref=e62]:
+          - text: Pieces from the
+          - emphasis [ref=e63]: pink season
+          - text: .
+      - generic [ref=e64]:
+        - text: pinned up like the wall by my bed —
+        - text: please don't mind the tape. ✿
+    - generic [ref=e66]:
+      - img
+      - figure "quiet afternoon '25" [ref=e67]:
+        - generic [ref=e68]: favorite ✦
+        - img "Portrait — girl smiling with closed eyes" [ref=e69]
+        - generic [ref=e70]:
+          - generic [ref=e71]: quiet afternoon
+          - generic [ref=e72]: "'25"
+      - figure "double peace '25" [ref=e73]:
+        - img "Portrait — two peace signs" [ref=e74]
+        - generic [ref=e75]:
+          - generic [ref=e76]: double peace
+          - generic [ref=e77]: "'25"
+  - generic [ref=e78]:
+    - img [ref=e79]
+    - img [ref=e86]
+    - blockquote [ref=e93]: “ I don't really know what I'm doing yet — but I know the hand keeps moving, and the paper keeps saying yes. ”
+    - generic [ref=e94]: — Saqira
+  - generic [ref=e95]:
+    - generic [ref=e96]:
+      - generic [ref=e97]:
+        - heading "Say hi, send a letter, commission a doodle." [level=2] [ref=e98]:
+          - text: Say hi,
+          - emphasis [ref=e99]: send a letter
+          - text: ","
+          - text: commission a doodle.
+        - paragraph [ref=e100]: I trade sketches for kind words and occasionally boba. For commissions or just to show me your cat, reach out below.
+      - generic [ref=e101]:
+        - link "→ saqira@ via my brother" [ref=e102]:
+          - /url: mailto:lztxd111@gmail.com
+        - link "→ visit Bo's engineering side" [ref=e103]:
+          - /url: index.html
+        - link "→ back to the top ↑" [ref=e104]:
+          - /url: "#top"
+    - generic [ref=e105]:
+      - generic [ref=e106]: © 2026 Saqira Ti
+      - generic [ref=e107]: drawn with love, hosted by her brother ♡
+      - generic [ref=e108]: no. 002 / site
