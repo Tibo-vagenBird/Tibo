@@ -314,6 +314,14 @@
                 <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="nav-right">
+                <a href="project-teams.html" class="teams-icon" aria-label="UBC Design Teams Recruitment Tracker" title="UBC Design Teams Recruitment Tracker">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </a>
                 <button class="theme-toggle" id="themeSwitch" onclick="toggleTheme()" aria-label="Toggle theme">
                     <span class="theme-icon" id="themeIcon">&#9728;</span>
                 </button>
@@ -450,28 +458,6 @@
                         <span>Protobuf/nanopb</span>
                         <span>COBS Framing</span>
                         <span>Quaternion Math</span>
-                    </div>
-                </a>
-
-                <a href="project-teams.html" class="project-card">
-                    <div class="project-img-wrapper">
-                        <img src="media/voiture.jpg" alt="UBC Design Teams Recruitment Tracker" class="project-img" loading="lazy" style="filter: hue-rotate(140deg) saturate(0.6);">
-                        <div class="project-img-fade"></div>
-                        <div class="project-img-scanline"></div>
-                    </div>
-                    <div class="project-top">
-                        <span class="project-label">Live Tool</span>
-                        <svg class="project-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                    </div>
-                    <h3 class="project-name">UBC Design Teams &mdash; Recruitment Tracker</h3>
-                    <p class="project-desc">Auto-refreshing status tracker for 33 UBC Engineering design teams. A GitHub Actions cron job scrapes every recruitment page weekly during Aug 15 &ndash; Sep 15, then Claude (Haiku) summarizes status, roles, and application links into structured JSON that this page renders.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Selenium</span>
-                        <span>spaCy NER</span>
-                        <span>Anthropic API</span>
-                        <span>GitHub Actions</span>
-                        <span>Scheduled ETL</span>
                     </div>
                 </a>
 
