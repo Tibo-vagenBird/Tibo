@@ -483,6 +483,17 @@
     font-size: 0.85em;
 }
 
+/* ── Inline code ── */
+.project-content code {
+    font-family: var(--font-display, 'Space Mono', monospace);
+    font-size: 0.85em;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+}
+
 /* ── Comparison cards ── */
 .proj-comparison {
     display: flex;

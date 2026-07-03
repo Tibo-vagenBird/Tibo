@@ -17,15 +17,196 @@
     <div class="project-hero" style="background-image: url('media/Ulysses_GCS.png')">
         <div class="project-hero-overlay"></div>
         <a href="index.html#projects" class="project-back">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
-            <span data-i18n="back_to_projects">Back to Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12L12 19M5 12L12 5"/></svg>
+            <span>Back to Projects</span>
         </a>
-        <h1 class="project-hero-title" data-i18n="project2_name">Ulysses Ground Control Station</h1>
+        <h1 class="project-hero-title">Ulysses Ground Control Station</h1>
     </div>
+
+    <div class="project-layout">
+
+    <!-- ── Table of Contents sidebar ── -->
+    <aside class="proj-toc" id="projToc">
+        <div class="proj-toc-inner">
+            <span class="proj-toc-title">Contents</span>
+            <nav style="position: relative;">
+                <div class="proj-toc-progress">
+                    <div class="proj-toc-progress-fill" id="tocProgress"></div>
+                </div>
+                <a href="#overview" class="proj-toc-link active">Overview</a>
+                <a href="#serial" class="proj-toc-link">Serial &amp; Radio</a>
+                <a href="#telemetry" class="proj-toc-link">Telemetry</a>
+                <a href="#architecture" class="proj-toc-link">Architecture</a>
+                <a href="#tech" class="proj-toc-link">Tech Stack</a>
+            </nav>
+        </div>
+    </aside>
+
     <main class="project-content">
-        <!-- Content will be added later -->
+
+        <!-- ── Meta bar ── -->
+        <div class="proj-meta proj-reveal">
+            <div class="proj-meta-item">
+                <span class="proj-meta-label">Role</span>
+                <span class="proj-meta-value">C++ Backend Engineer</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label">Team</span>
+                <span class="proj-meta-value">UBC Rocket</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label">Platform</span>
+                <span class="proj-meta-value">Qt 6 / QML</span>
+            </div>
+            <div class="proj-meta-item">
+                <span class="proj-meta-label">Source</span>
+                <a href="https://github.com/UBC-Rocket/ulysses-ground-control" target="_blank" rel="noopener" class="proj-meta-link">GitHub &nearr;</a>
+            </div>
+        </div>
+
+        <!-- ── Overview ── -->
+        <section class="proj-section proj-reveal" id="overview">
+            <h2 class="proj-heading">Overview</h2>
+            <p>The <strong>Ulysses Ground Control Station</strong> is a cross-platform telemetry and control application built with <strong>Qt 6</strong> for UBC Rocket's sounding-rocket development and mission operations. It provides real-time serial communication with RFD900x radio modems, live sensor telemetry decoding, 3D orientation visualization, system alerts, and modular UI panels tuned for engineering workflows.</p>
+            <p>I wrote the full <strong>C++ backend</strong> &mdash; the serial/radio interface, command sender, alarm processing, and telemetry model &mdash; along with the settings and configuration UI.</p>
+            <figure class="proj-figure proj-reveal">
+                <img src="media/Ulysses_GCS.png" alt="Ulysses Ground Control Station dashboard" loading="lazy">
+                <figcaption>The Ulysses GCS dashboard &mdash; serial control, telemetry panels, and 3D rocket visualization</figcaption>
+            </figure>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Serial & Radio ── -->
+        <section class="proj-section proj-reveal" id="serial">
+            <h2 class="proj-heading">Serial &amp; Radio Interface</h2>
+            <p>The <code>SerialBridge</code> backend handles all radio I/O and supports two operating modes:</p>
+            <ul class="proj-list">
+                <li><strong>Single-port mode</strong> &mdash; one COM port handles both RX and TX, with automatic RX pause during transmit to prevent echo/loopback on a single modem.</li>
+                <li><strong>Dual-port mode</strong> &mdash; dedicated RX and TX ports, each with independent baud settings, connect/disconnect, manual send, and a periodic command sender (1&ndash;200&nbsp;Hz).</li>
+            </ul>
+            <p>RFD900x modems are discovered by scanning COM ports with FTDI + CP210x adapter detection and AT-mode probing (the <code>+++</code> guard sequence). The UI surfaces OS-level port errors and prevents the same port from being assigned to both ports at once.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Telemetry ── -->
+        <section class="proj-section proj-reveal" id="telemetry">
+            <h2 class="proj-heading">Sensor Telemetry</h2>
+            <p>Incoming telemetry arrives as a 14-field CSV frame, parsed by <code>SensorDataModel</code> and decoded into QML-bound properties updated at 10&nbsp;Hz:</p>
+            <ul class="proj-list">
+                <li><strong>IMU</strong> &mdash; linear acceleration (x, y, z) and gyro (roll, pitch, yaw)</li>
+                <li><strong>Barometer</strong> &mdash; pressure and altitude</li>
+                <li><strong>Kalman filter</strong> &mdash; raw and filtered angle</li>
+                <li><strong>Status</strong> &mdash; velocity, temperature, signal, battery</li>
+            </ul>
+            <p>A <strong>Qt Quick 3D</strong> panel drives a live rocket model from the IMU stream (Euler rotation mapped to Qt's Y-up coordinate system, with axis helpers and WASD camera movement). The <code>AlarmReceiver</code> classifies incoming text into <strong>ERROR</strong>, <strong>WARNING</strong>, and <strong>SUCCESS</strong> chips in the System Alert panel.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Architecture ── -->
+        <section class="proj-section proj-reveal" id="architecture">
+            <h2 class="proj-heading">Architecture</h2>
+            <p>A clean split between a C++ backend and a QML frontend keeps the I/O and parsing logic testable and the UI declarative.</p>
+            <ul class="proj-list">
+                <li><code>SerialBridge</code> &mdash; serial I/O, port scanning, RX/TX, modem detection</li>
+                <li><code>CommandSender</code> &mdash; manual and periodic command transmission</li>
+                <li><code>AlarmReceiver</code> &mdash; classifies incoming text messages</li>
+                <li><code>SensorDataModel</code> &mdash; parses CSV telemetry and exposes it to QML</li>
+            </ul>
+            <p>The frontend is composed of modular QML panels &mdash; serial control, IMU data, barometer/telemetry, 3D visualization, and system alerts &mdash; built from a shared library of reusable UI components.</p>
+        </section>
+
+        <hr class="proj-divider">
+
+        <!-- ── Tech stack ── -->
+        <section class="proj-section proj-reveal" id="tech">
+            <h2 class="proj-heading">Tech Stack</h2>
+            <div class="proj-tags proj-reveal-stagger">
+                <span>C++</span>
+                <span>QML</span>
+                <span>Qt 6</span>
+                <span>Qt Quick 3D</span>
+                <span>Serial Communication</span>
+                <span>RFD900x Radio</span>
+                <span>Telemetry Decoding</span>
+                <span>Kalman Filtering</span>
+            </div>
+        </section>
+
     </main>
+
+    </div><!-- .project-layout -->
+
     <script src="mn-translations.js"></script>
     <script src="script.js"></script>
+    <script>
+    (function() {
+        /* ── Scroll-triggered reveal (IntersectionObserver) ── */
+        var reveals = document.querySelectorAll('.proj-reveal, .proj-reveal-stagger');
+        if ('IntersectionObserver' in window) {
+            var revealObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            reveals.forEach(function(el) { revealObs.observe(el); });
+        } else {
+            reveals.forEach(function(el) { el.classList.add('revealed'); });
+        }
+
+        /* ── TOC: scroll spy + progress bar ── */
+        var sections = document.querySelectorAll('.proj-section[id]');
+        var tocLinks = document.querySelectorAll('.proj-toc-link');
+        var progressFill = document.getElementById('tocProgress');
+        if (!sections.length || !tocLinks.length) return;
+
+        tocLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - 24;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+
+        var ticking = false;
+        function updateActive() {
+            var scrollY = window.scrollY + 80;
+            var current = '';
+            var currentIdx = 0;
+            sections.forEach(function(sec, i) {
+                if (sec.offsetTop <= scrollY) {
+                    current = sec.id;
+                    currentIdx = i;
+                }
+            });
+            tocLinks.forEach(function(link) {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+
+            /* Progress bar */
+            if (progressFill && sections.length > 1) {
+                var pct = (currentIdx / (sections.length - 1)) * 100;
+                progressFill.style.height = pct + '%';
+            }
+
+            ticking = false;
+        }
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateActive);
+                ticking = true;
+            }
+        });
+        updateActive();
+    })();
+    </script>
 </body>
 </html>

@@ -269,30 +269,14 @@ function setLang(lang) {
     }
 }
 
-// Cycle: en → mn → zh → en
-function toggleLang() {
-    var next = currentLang === "en" ? "mn" : (currentLang === "mn" ? "zh" : "en");
-    setLang(next);
-    localStorage.setItem('lang', next);
-}
+// Language switching disabled — English only for now.
+// (Chinese / Mongolian modes and the language toggle have been removed.)
+function toggleLang() { /* no-op: language switching disabled */ }
 
-// Restore language: localStorage first, then IP auto-detect
+// Force English on load, resetting any previously saved zh/mn preference.
 (function () {
-    var saved = localStorage.getItem('lang');
-    if (saved && (saved === 'mn' || saved === 'zh' || saved === 'en')) {
-        setLang(saved);
-        return;
-    }
-    // Auto-detect country via IP only if no saved preference
-    fetch("https://ipapi.co/json/")
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-            if (data.country_code === "CN") {
-                setLang("zh");
-                localStorage.setItem('lang', 'zh');
-            }
-        })
-        .catch(function () { });
+    localStorage.setItem('lang', 'en');
+    setLang('en');
 })();
 
 
